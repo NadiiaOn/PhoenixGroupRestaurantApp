@@ -6,7 +6,6 @@ import Logo from "../components/Logo";
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Logo />
       <Navbar />
       <Footer />
     </View>
