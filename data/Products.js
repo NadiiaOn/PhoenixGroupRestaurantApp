@@ -51,7 +51,7 @@ export const starters = [
     glutenfri: false,
     laktosfri: true,
     allergener: ["jordnötter", "soja", "vete"],
-    bild: "assets/Sate_Ayam.png",
+    bild: require("assets/indonesien/Sate_Ayam.png"),
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ export const starters = [
     glutenfri: false,
     laktosfri: true,
     allergener: ["vete", "soja"],
-    bild: "assets/Lumpia.png",
+    bild: require("assets/indonesien/Lumpia.png"),
   },
 ];
 
@@ -178,7 +178,7 @@ export const meals = [
     glutenfri: false,
     laktosfri: true,
     allergener: ["ägg", "soja", "vete", "skaldjur"],
-    bild: "assets/Nasi_Goreng.png",
+    bild: require("assets/indonesien/Nasi_Goreng.png"),
   },
   {
     id: 12,
@@ -206,7 +206,7 @@ export const meals = [
     glutenfri: true,
     laktosfri: true,
     allergener: [],
-    bild: "assets/Rendang_Daging.png",
+    bild: require("assets/indonesien/Rendang_Daging.png"),
   },
   {
     id: 13,
@@ -232,7 +232,7 @@ export const meals = [
     glutenfri: false,
     laktosfri: true,
     allergener: ["vete", "ägg", "soja"],
-    bild: "assets/Mie_Goreng.png",
+    bild: require("assets/indonesien/Mie_Goreng.png"),
   },
   {
     id: 14,
@@ -260,7 +260,7 @@ export const meals = [
     laktosfri: true,
     allergener: ["jordnötter", "soja"],
     notering: "Görs med glutenfri tamari istället för vanlig sojasås.",
-    bild: "assets/Gado-Gado.png",
+    bild: require("assets/indonesien/Gado-Gado.png"),
   },
   {
     id: 15,
@@ -288,7 +288,7 @@ export const meals = [
     glutenfri: true,
     laktosfri: true,
     allergener: ["ägg"],
-    bild: "assets/Soto_Ayam.png",
+    bild: require("assets/indonesien/Soto_Ayam.png"),
   },
   {
     id: 16,
@@ -316,7 +316,7 @@ export const meals = [
     glutenfri: true,
     laktosfri: true,
     allergener: ["soja"],
-    bild: "assets/Sayur_Lodeh.png",
+    bild: require("assets/indonesien/Sayur_Lodeh.png"),
   },
   {
     id: 17,
@@ -342,7 +342,7 @@ export const meals = [
     glutenfri: false,
     laktosfri: true,
     allergener: ["fisk", "soja", "vete"],
-    bild: "assets/Ikan_Bakar.png",
+    bild: require("assets/indonesien/Ikan_Bakar.png"),
   },
 ];
 
@@ -383,7 +383,7 @@ export const desserts = [
     glutenfri: true,
     laktosfri: true,
     allergener: [],
-    bild: "assets/Klepon.png",
+    bild: require("assets/indonesien/Klepon.png"),
   },
 ];
 
