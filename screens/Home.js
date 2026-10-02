@@ -1,11 +1,13 @@
 import { FlatList, StyleSheet, View } from "react-native";
 import { useEffect, useState } from "react";
 import { Banners } from "../data/BannerData";
-import Footer from "../components/Footer";
+
 import NewsBanner from "../components/banners/NewsBanner";
 import NewsBanner2 from "../components/banners/NewsBanner2";
 import StoryBanner from "../components/banners/StoryBanner";
 import Navbar from "../components/Navbar";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [banners, setBanners] = useState([]);
@@ -16,8 +18,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Navbar />
-
+      {/* <Navbar /> */}
       <FlatList
         data={banners}
         keyExtractor={(item) => item.id.toString()}
@@ -35,9 +36,13 @@ export default function Home() {
           }
           return null;
         }}
+        ListFooterComponent={
+          <>
+            <Contact />
+            <Footer />
+          </>
+        }
       />
-
-      <Footer />
     </View>
   );
 }
