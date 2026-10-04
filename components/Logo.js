@@ -5,10 +5,10 @@ export default function Logo() {
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 600 600"
-      width="300"
-      height="300"
+      width="200"
+      height="200"
     >
-      <Rect width="600" height="600" fill="#FFFFFF" />
+      <Rect width="600" height="600" fill="transparent" />
       <Circle cx="300" cy="300" r="220" fill="#F45A45" />
       <Circle
         cx="300"
