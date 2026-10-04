@@ -6,7 +6,7 @@ export const Banners = [
       "Crispy risotto balls filled with Italian flavors. Perfect as a starter!",
     discount: "20%",
     label: "News!",
-    image: require("../assets/italienskt/Arancini-banner.png"),
+    image: require("../assets/Italienskt/Arancini-banner.png"),
   },
   {
     id: 2,
