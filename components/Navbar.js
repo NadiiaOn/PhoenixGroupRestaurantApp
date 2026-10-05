@@ -1,21 +1,39 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import Logo from "../components/Logo";
+import { useNavigation } from "@react-navigation/native";
+
+import HamburgerMenu from "./HamburgerMenu";
 
 export default function Navbar() {
+  const navigation = useNavigation();
   return (
-    <View>
-      <Text style={styles.title}>Navbar</Text>
+    <View style={styles.container}>
+      <Pressable
+        style={({ pressed }) => pressed && { opacity: 0.5 }}
+        onPress={() => navigation.navigate("Home")}
+      >
+        <Logo size={150} />
+      </Pressable>
+
+      <View style={styles.menu}>
+        <HamburgerMenu />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: "row",
+    height: 150,
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 50,
+    paddingHorizontal: 16,
   },
-
-  title: {
-    fontWeight: 600,
-    fontSize: 24,
-    color: "#f45a45",
+  menu: {
+    position: "absolute",
+    right: 24,
   },
 });

@@ -17,6 +17,8 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
+      <Navbar />
+      <Footer />
       {/* <Navbar /> */}
       <FlatList
         data={banners}
