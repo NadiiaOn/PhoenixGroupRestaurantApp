@@ -8,6 +8,7 @@ import StoryBanner from "../components/banners/StoryBanner";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   const [banners, setBanners] = useState([]);
@@ -40,10 +41,10 @@ export default function Home() {
         ListFooterComponent={
           <>
             <Contact />
-            <Footer />
           </>
         }
       />
+      <Navbar />
     </View>
   );
 }
