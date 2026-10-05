@@ -37,8 +37,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Cuisine-Menu" component={CuisineMenu} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Cuisine-Menu" component={CuisineMenu} />
       </Stack.Navigator>
     </NavigationContainer>
   );

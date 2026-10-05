@@ -1,14 +1,13 @@
 import Svg, { Circle, Rect, Path } from "react-native-svg";
 
-export default function Logo() {
+export default function Logo({ size }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 600 600"
-      width="200"
-      height="200"
+      width={size}
+      height={size}
     >
-      <Rect width="600" height="600" fill="transparent" />
       <Circle cx="300" cy="300" r="220" fill="#F45A45" />
       <Circle
         cx="300"

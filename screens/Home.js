@@ -5,8 +5,9 @@ import { Banners } from "../data/BannerData";
 import NewsBanner from "../components/banners/NewsBanner";
 import NewsBanner2 from "../components/banners/NewsBanner2";
 import StoryBanner from "../components/banners/StoryBanner";
-import Navbar from "../components/Navbar";
 import Contact from "../components/Contact";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [banners, setBanners] = useState([]);
@@ -17,7 +18,8 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      {/* <Navbar /> */}
+      <Header />
+
       <FlatList
         data={banners}
         keyExtractor={(item) => item.id.toString()}
@@ -38,6 +40,7 @@ export default function Home() {
         ListFooterComponent={
           <>
             <Contact />
+            <Footer />
           </>
         }
       />
