@@ -17,7 +17,8 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Navbar />
+      <Header />
+      <Text>Test HOME</Text>
       <Footer />
       {/* <Navbar /> */}
       <FlatList

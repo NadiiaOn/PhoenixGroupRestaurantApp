@@ -1,27 +1,73 @@
-import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Linking,
+  Modal,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { ListIcon, XIcon } from "phosphor-react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import Animated, { FadeInUp } from "react-native-reanimated";
+import Animated, { FadeInUp, FadeInLeft } from "react-native-reanimated";
+import {
+  UserPlusIcon,
+  PhoneCallIcon,
+  TimerIcon,
+  InstagramLogoIcon,
+  FacebookLogoIcon,
+  LinkedinLogoIcon,
+  XLogoIcon,
+} from "phosphor-react-native";
 
-import NavLinks from "./NavLinks";
+import MenuItem from "./MenuItem";
+import Logo from "./Logo";
+import MenuFooter from "./MenuFooter";
+import { OpeningHours } from "../data/OpeningHours";
 
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);
+  const [openLinks, setOpenLinks] = useState(null);
   const navigation = useNavigation();
 
+  function closeMenu() {
+    setOpen(false);
+    setOpenLinks(null);
+  }
+
   const links = [
-    { id: 1, text: "HOME", screen: "Home" },
-    { id: 2, text: "FIND US", screen: "Find us" },
-    { id: 3, text: "FOOD", screen: "Food" },
-    { id: 4, text: "STORY", screen: "Story" },
-    { id: 5, text: "ORDER", screen: "Order" },
+    { id: 1, text: "Become a member", icon: UserPlusIcon, screen: "Login" },
+    {
+      id: 2,
+      text: "Contact us",
+      icon: PhoneCallIcon,
+      info: "+46 70 123 45 67",
+      phone: "+46701234567",
+    },
+    { id: 3, text: "Opening hours", icon: TimerIcon, info: OpeningHours },
   ];
 
-  function goTo(screenName) {
-    setOpen(false);
-    navigation.navigate(screenName);
-  }
+  const footer = [
+    {
+      id: 1,
+      name: "Instagram",
+      icon: InstagramLogoIcon,
+      url: "https://wwww.instagram.com",
+    },
+    {
+      id: 2,
+      name: "Facebook",
+      icon: FacebookLogoIcon,
+      url: "https://www.facebook.com",
+    },
+    {
+      id: 3,
+      name: "LinkedIn",
+      icon: LinkedinLogoIcon,
+      url: "https://www.linkedin.com",
+    },
+    { id: 4, name: "X", icon: XLogoIcon, url: "https://www.x.com" },
+  ];
 
   return (
     <>
@@ -33,42 +79,77 @@ export default function HamburgerMenu() {
       </Pressable>
       <Modal
         visible={open}
+        transparent
         statusBarTranslucent
         navigationBarTranslucent
-        onRequestClose={() => setOpen(false)}
+        onRequestClose={closeMenu}
       >
-        <View style={styles.overlay}>
-          <View style={styles.menu}>
-            <Pressable
-              style={({ pressed }) => [
-                styles.xButton,
-                pressed && { opacity: 0.5 },
-              ]}
-              onPress={() => setOpen(false)}
+        <View style={styles.backdrop}>
+          <Pressable style={StyleSheet.absoluteFill} onPress={closeMenu} />
+
+          {open && (
+            <Animated.View
+              entering={FadeInLeft.duration(400)}
+              style={styles.overlay}
             >
-              <XIcon size={40} color="black" />
-            </Pressable>
-            {links.map((link, index) => (
-              <Animated.View
-                key={link.id}
-                entering={FadeInUp.delay(index * 100).duration(400)}
-              >
-                <NavLinks text={link.text} onPress={() => goTo(link.screen)} />
-              </Animated.View>
-            ))}
-          </View>
+              <View style={styles.menu}>
+                <View style={styles.linksContainer}>
+                  <View style={styles.logoContainer}>
+                    <Logo size={150} />
+                  </View>
+
+                  {/* Start: Menu links */}
+                  {links.map((link) => (
+                    <MenuItem
+                      key={link.id}
+                      links={link}
+                      onPress={() =>
+                        setOpenLinks(openLinks === link.id ? null : link.id)
+                      }
+                      isOpen={link.id === openLinks}
+                    />
+                  ))}
+                  {/* End: Menu links */}
+                </View>
+
+                {/* Start: Menu footer */}
+                <View style={styles.footerContainer}>
+                  <View style={styles.footerIconContainer}>
+                    {footer.map((item) => (
+                      <MenuFooter key={item.id} item={item} />
+                    ))}
+                  </View>
+                  <Pressable
+                    style={({ pressed }) => pressed && { opacity: 0.5 }}
+                    onPress={() =>
+                      Linking.openURL("https://example.com/privacy")
+                    }
+                  >
+                    <Text style={styles.footerText}>Privacy & terms</Text>
+                  </Pressable>
+                </View>
+                {/* End: Menu footer */}
+              </View>
+            </Animated.View>
+          )}
         </View>
       </Modal>
     </>
   );
 }
 const styles = StyleSheet.create({
-  overlay: {
+  backdrop: {
     flex: 1,
-    backgroundColor: "#ffebe9",
+    backgroundColor: "rgba(0,0,0,0.4)",
+  },
+  overlay: {
+    height: "100%",
+    width: "80%",
+    backgroundColor: "black",
     paddingHorizontal: 16,
   },
   menu: {
+    flex: 1,
     marginTop: 70,
   },
   xButton: {
@@ -76,5 +157,27 @@ const styles = StyleSheet.create({
     right: 16,
     top: 0,
     zIndex: 50,
+  },
+  linksContainer: {
+    gap: 24,
+  },
+  logoContainer: {
+    borderBottomWidth: 1,
+    borderColor: "white",
+    paddingBottom: 25,
+    alignItems: "center",
+  },
+  footerContainer: {
+    marginTop: "auto",
+    paddingBottom: 40,
+    alignItems: "center",
+    gap: 8,
+  },
+  footerIconContainer: {
+    flexDirection: "row",
+    gap: 20,
+  },
+  footerText: {
+    color: "white",
   },
 });

@@ -8,7 +8,6 @@ export default function Logo({ size }) {
       width={size}
       height={size}
     >
-      <Rect width="600" height="600" fill="transparent" />
       <Circle cx="300" cy="300" r="220" fill="#F45A45" />
       <Circle
         cx="300"
