@@ -4,7 +4,7 @@ export default function StoryBanner2({ banner }) {
   return (
     <Pressable style={styles.container}>
       <View style={styles.imageContainer}>
-        <Logo />
+        <Logo size={150} />
       </View>
       <View style={styles.content}>
         <Text style={styles.name}>{banner.name}</Text>
