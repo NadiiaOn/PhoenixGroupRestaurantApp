@@ -1,23 +1,59 @@
-import { StyleSheet, View, Text } from "react-native";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { FlatList, StyleSheet, View } from "react-native";
+import { useEffect, useState } from "react";
+import { Banners } from "../data/BannerData";
+
+import NewsBanner from "../components/banners/NewsBanner";
+import NewsBanner2 from "../components/banners/NewsBanner2";
+import StoryBanner from "../components/banners/StoryBanner";
 import Navbar from "../components/Navbar";
-import Logo from "../components/Logo";
+import Contact from "../components/Contact";
 
 export default function Home() {
+  const [banners, setBanners] = useState([]);
+
+  useEffect(() => {
+    setBanners(Banners);
+  }, []);
+
   return (
     <View style={styles.container}>
       <Header />
       <Text>Test HOME</Text>
       <Footer />
-      <Navbar />
+      {/* <Navbar /> */}
+      <FlatList
+        data={banners}
+        keyExtractor={(item) => item.id.toString()}
+        contentContainerStyle={styles.list}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item, index }) => {
+          if (index === 0) {
+            return <NewsBanner banner={item} />;
+          }
+          if (index === 1) {
+            return <NewsBanner2 banner={item} />;
+          }
+          if (index === 2) {
+            return <StoryBanner banner={item} />;
+          }
+          return null;
+        }}
+        ListFooterComponent={
+          <>
+            <Contact />
+          </>
+        }
+      />
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+
+  list: {
+    paddingVertical: 10,
   },
 });
