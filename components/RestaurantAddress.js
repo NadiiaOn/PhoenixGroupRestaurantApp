@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Pressable } from "react-native";
 import { openMaps } from "../utils/openMaps";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 //import { Fonts } from "../constants/Fonts";
+import Ionicons from "@react-native-vector-icons/ionicons";
 
 function RestaurantAddress({ restaurant }) {
   const [isOpening, setIsOpening] = useState(false);
@@ -30,14 +31,17 @@ function RestaurantAddress({ restaurant }) {
     <Pressable
       onPress={handlePress}
       disabled={isOpening}
-      accessibilityRole="link"
+      accessibilityRole="button"
       accessibilityLabel={`Open ${restaurant.name} in maps`}
       style={({ pressed }) => [
         styles.addressContainer,
         pressed && styles.pressed,
       ]}
     >
-      <Text> 📍 {restaurant.address}</Text>
+      <View style={styles.locationContainer}>
+        <Ionicons name="location" size={22} color="#f45a45" />
+        <Text> {restaurant.address}</Text>
+      </View>
     </Pressable>
   );
 }
@@ -53,8 +57,13 @@ const styles = StyleSheet.create({
   addressText: {
     fontSize: 14,
     color: "#007AFF", // iOS link color
-      textDecorationLine: "underline",
+    textDecorationLine: "underline",
     //fontFamily: Fonts.NunitoSans_600SemiBold,
+  },
+  locationContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
   },
 });
 
