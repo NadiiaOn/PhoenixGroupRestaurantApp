@@ -37,8 +37,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Cuisine-Menu" component={CuisineMenu} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="CuisineMenu" component={CuisineMenu} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -8,7 +8,7 @@ import StoryBanner from "../components/banners/StoryBanner";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Logo from "../components/Logo";
+import Navbar from "../components/Navbar";
 //import RESTAURANT from "../constants/restaurant";
 //import RestaurantAddress from "../components/RestaurantAddress";
 

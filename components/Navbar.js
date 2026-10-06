@@ -1,9 +1,8 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   HouseIcon,
   MapPinIcon,
   BowlFoodIcon,
-  BookOpenTextIcon,
   ShoppingCartIcon,
 } from "phosphor-react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -13,12 +12,11 @@ import NavItem from "./NavItem";
 
 export default function Navbar() {
   const navigation = useNavigation();
-  const navItem = [
-    { id: 1, screen: "Home", icon: HouseIcon },
-    { id: 2, screen: "Find us", icon: MapPinIcon },
-    { id: 3, screen: "Food", icon: BowlFoodIcon },
-    { id: 4, screen: "Story", icon: BookOpenTextIcon },
-    { id: 5, screen: "Order", icon: ShoppingCartIcon },
+  const navItems = [
+    { id: 1, name: "Home", screen: "Home", icon: HouseIcon },
+    { id: 2, name: "Find Us", screen: "Find us", icon: MapPinIcon },
+    { id: 3, name: "Menu", screen: "CuisineMenu", icon: BowlFoodIcon },
+    { id: 4, name: "Order", screen: "Order", icon: ShoppingCartIcon },
   ];
 
   function goTo(screen) {
@@ -27,7 +25,7 @@ export default function Navbar() {
 
   return (
     <BlurView intensity={80} tint="prominent" style={styles.navbarContainer}>
-      {navItem.map((item) => (
+      {navItems.map((item) => (
         <NavItem key={item.id} item={item} onPress={() => goTo(item.screen)} />
       ))}
     </BlurView>
@@ -38,9 +36,9 @@ const styles = StyleSheet.create({
   navbarContainer: {
     height: 65,
     borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.5)",
+    borderColor: "rgba(221, 221, 221, 0.8)",
     borderRadius: 50,
-    backgroundColor: "rgba(250, 190, 180, 0.25)",
+    backgroundColor: "rgba(221, 221, 221, 0.7)",
     overflow: "hidden",
     flexDirection: "row",
     alignItems: "center",
