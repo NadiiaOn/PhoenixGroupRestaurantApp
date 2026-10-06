@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     position: "absolute",
-    bottom: 55,
+    bottom: 20,
     right: 16,
     left: 16,
   },

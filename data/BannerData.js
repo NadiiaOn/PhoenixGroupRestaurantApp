@@ -6,15 +6,15 @@ export const Banners = [
       "Crispy risotto balls filled with Italian flavors. Perfect as a starter!",
     discount: "20%",
     label: "News!",
-    image: require("../assets/Italienskt/Arancini-banner.png"),
+    image: require("../assets/italian/Arancini-banner.png"),
   },
   {
     id: 2,
-    name: "THAI FOOD",
+    name: "INDO FOOD",
     description:
-      "Discover delicious Thai dishes with authentic flavors and fresh ingredients!",
+      "Discover delicious Indo dishes with authentic flavors and fresh ingredients!",
     label: "New Cuisine",
-    image: require("../assets/placeholder/Placeholder.jpg"),
+    image: require("../assets/indonesian/Nasi_bg.png"),
   },
   {
     id: 3,

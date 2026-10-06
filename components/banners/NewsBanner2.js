@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     width: "48%",
     justifyContent: "center",
     padding: 8,
-    backgroundColor: "#91e2ff",
+    backgroundColor: "rgba(151, 77, 77, 0.15)",
   },
 
   image: {

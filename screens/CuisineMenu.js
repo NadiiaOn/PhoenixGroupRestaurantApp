@@ -29,7 +29,7 @@ export default function CuisineMenu({ navigation }) {
       description: "Spicy flavors from Indonesia",
       image: require("../assets/cusineCard/indonesianfood.png"),
       flag: require("../assets/flags/indonesia.png"),
-      background: "rgba(151, 77, 77, 0.1)",
+      background: "rgba(151, 77, 77, 0.15)",
       screen: "Byt till Indo screen och ta bort kommentar i goTo()!",
     },
 
@@ -39,7 +39,7 @@ export default function CuisineMenu({ navigation }) {
       description: "Traditional meals from Ukraine",
       image: require("../assets/cusineCard/ukrainefood.png"),
       flag: require("../assets/flags/ukraine.png"),
-      background: "rgba(71, 79, 151, 0.1)",
+      background: "rgba(71, 79, 151, 0.15)",
       screen: "Byt till Ukraine screen och ta bort kommentar i goTo()!",
     },
   ];
@@ -50,20 +50,28 @@ export default function CuisineMenu({ navigation }) {
   }
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {cuisines.map((cuisine) => (
-        <CuisineCard
-          key={cuisine.id}
-          cuisine={cuisine}
-          onPress={() => goTo(cuisine.screen)}
-        />
-      ))}
-    </ScrollView>
+    <View style={styles.wrapper}>
+      <ScrollView contentContainerStyle={styles.container}>
+        {cuisines.map((cuisine) => (
+          <CuisineCard
+            key={cuisine.id}
+            cuisine={cuisine}
+            onPress={() => goTo(cuisine.screen)}
+          />
+        ))}
+      </ScrollView>
+      <Navbar />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
+
   container: {
+    height: 830,
     gap: 16,
     marginHorizontal: 15,
     marginTop: 10,

@@ -7,7 +7,6 @@ import NewsBanner2 from "../components/banners/NewsBanner2";
 import StoryBanner from "../components/banners/StoryBanner";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
@@ -46,9 +45,6 @@ export default function Home() {
       />
 
       <Navbar />
-
-      <Footer />
-      {/* <RestaurantAddress restaurant={RESTAURANT} /> */}
     </View>
   );
 }
