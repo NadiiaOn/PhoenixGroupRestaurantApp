@@ -1,6 +1,7 @@
 import { StyleSheet, View, ScrollView } from "react-native";
 
 import CuisineCard from "../components/CuisineCard";
+import Navbar from "../components/Navbar";
 
 export default function CuisineMenu({ navigation }) {
   const cuisines = [

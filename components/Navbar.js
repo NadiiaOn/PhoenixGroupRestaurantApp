@@ -9,12 +9,20 @@ import { useNavigation } from "@react-navigation/native";
 import { BlurView } from "expo-blur";
 
 import NavItem from "./NavItem";
+import { useState } from "react";
+import Restaurant from "../constants/restaurant";
+import { openMaps } from "../utils/openMaps";
 
 export default function Navbar() {
+  const [isOpening, setIsOpening] = useState(false);
   const navigation = useNavigation();
   const navItems = [
     { id: 1, name: "Home", screen: "Home", icon: HouseIcon },
-    { id: 2, name: "Find Us", screen: "Find us", icon: MapPinIcon },
+    {
+      id: 2,
+      name: "Find Us",
+      icon: MapPinIcon,
+    },
     { id: 3, name: "Menu", screen: "CuisineMenu", icon: BowlFoodIcon },
     { id: 4, name: "Order", screen: "Order", icon: ShoppingCartIcon },
   ];
@@ -23,10 +31,38 @@ export default function Navbar() {
     navigation.navigate(screen);
   }
 
+  const handleMapPress = async () => {
+    if (isOpening) {
+      return;
+    }
+    setIsOpening(true);
+
+    try {
+      await openMaps({
+        address: Restaurant.address,
+        label: Restaurant.name,
+        latitude: Restaurant.latitude,
+        longitude: Restaurant.longitude,
+      });
+    } finally {
+      setIsOpening(false);
+    }
+  };
+
   return (
     <BlurView intensity={80} tint="prominent" style={styles.navbarContainer}>
       {navItems.map((item) => (
-        <NavItem key={item.id} item={item} onPress={() => goTo(item.screen)} />
+        <NavItem
+          key={item.id}
+          item={item}
+          onPress={() => {
+            if (item.name === "Find Us") {
+              handleMapPress();
+            } else {
+              goTo(item.screen);
+            }
+          }}
+        />
       ))}
     </BlurView>
   );
@@ -44,7 +80,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     position: "absolute",
-    bottom: 20,
+    bottom: 55,
     right: 16,
     left: 16,
   },

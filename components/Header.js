@@ -12,7 +12,7 @@ export default function Header() {
         style={({ pressed }) => pressed && { opacity: 0.5 }}
         onPress={() => navigation.navigate("Home")}
       >
-        <Logo size={150} />
+        <Logo size={135} />
       </Pressable>
 
       <View style={styles.menu}>
@@ -25,12 +25,12 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    height: 150,
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
     marginTop: 50,
     paddingHorizontal: 16,
+    paddingBottom: 1,
   },
   menu: {
     position: "absolute",

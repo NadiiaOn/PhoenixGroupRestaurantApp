@@ -46,7 +46,9 @@ export default function Home() {
           </>
         }
       />
+
       <Navbar />
+
       <Footer />
       {/* <RestaurantAddress restaurant={RESTAURANT} /> */}
     </View>
