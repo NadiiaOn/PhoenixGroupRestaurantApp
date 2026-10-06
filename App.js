@@ -1,7 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import Home from "./screens/Home";
+import ProductDetailScreen from "./screens/ProductDetailScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { useFonts } from "expo-font";
+import { useFonts } from "expo-font";   
 import { useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { Rubik_500Medium, Rubik_700Bold } from "@expo-google-fonts/rubik";
@@ -36,6 +37,14 @@ export default function App() {
           name="Home"
           component={Home}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProductDetail"
+          component={ProductDetailScreen}
+          options={{
+            title: "",
+            headShown: false
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
