@@ -11,6 +11,8 @@ import {
   NunitoSans_600SemiBold,
   NunitoSans_700Bold,
 } from "@expo-google-fonts/nunito-sans";
+import CategoryMenu from "./screens/CategoryMenu";
+import FoodMenu from "./screens/FoodMenu";
 
 //Keep the splash screen visible until the fonts are loaded
 SplashScreen.preventAutoHideAsync();
@@ -42,7 +44,9 @@ export default function App() {
           component={Home}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="FoodMenu" component={FoodMenu} />
         <Stack.Screen name="CuisineMenu" component={CuisineMenu} />
+        <Stack.Screen name="CategoryMenu" component={CategoryMenu} />
       </Stack.Navigator>
     </NavigationContainer>
   );
