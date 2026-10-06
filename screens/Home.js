@@ -9,8 +9,6 @@ import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-//import RESTAURANT from "../constants/restaurant";
-//import RestaurantAddress from "../components/RestaurantAddress";
 
 export default function Home() {
   const [banners, setBanners] = useState([]);

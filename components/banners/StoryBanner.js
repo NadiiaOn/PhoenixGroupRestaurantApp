@@ -51,10 +51,11 @@ const styles = StyleSheet.create({
   },
 
   name: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: "700",
     color: "#f45a45",
     flexShrink: 1,
+    textTransform: "uppercase",
   },
 
   description: {
