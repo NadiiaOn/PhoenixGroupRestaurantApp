@@ -21,8 +21,7 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font",
-      "expo-splash-screen"
+      "@react-native-vector-icons/ionicons"
     ]
   }
 }
