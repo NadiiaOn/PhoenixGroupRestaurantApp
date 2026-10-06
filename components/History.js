@@ -36,14 +36,15 @@ function History({ visible, onClose }) {
             butiken en restaurang.
           </Text>
           <Text style={styles.text}>
-            Viktors bord står kvar mitt i matsalen. Slå dig ned, här finns
-            alltid plats.
+            Viktors bord står kvar mitt i matsalen.
           </Text>
           <Text style={styles.text}>Slå dig ned, här finns alltid plats.</Text>
           <Pressable
-            style={({ pressed }) => pressed && { opacity: 0.5 }}
+            style={({ pressed }) => [
+              styles.closeButton,
+              pressed && { opacity: 0.5 },
+            ]}
             onPress={onClose}
-            style={styles.closeButton}
           >
             <Text style={styles.buttonText}>Close</Text>
           </Pressable>
@@ -91,6 +92,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignSelf: "center",
     marginTop: 20,
+    pressed: {
+      opacity: 0.5,
+    },
   },
   buttonText: {
     color: "white",
