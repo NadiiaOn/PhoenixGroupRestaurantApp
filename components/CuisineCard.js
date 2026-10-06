@@ -1,21 +1,30 @@
 import { StyleSheet, View, Image, Text, Pressable } from "react-native";
+import { ArrowRightIcon } from "phosphor-react-native";
+import Fonts from "../constants/Fonts";
 
-export default function CuisineCard({ cuisine }) {
+export default function CuisineCard({ cuisine, onPress }) {
   return (
-    <View style={styles.shadow}>
-      <Pressable style={[styles.card, { backgroundColor: cuisine.background }]}>
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.shadow,
+        pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] },
+      ]}
+    >
+      <View style={[styles.card, { backgroundColor: cuisine.background }]}>
+        <View style={styles.textContainer}>
+          <Image source={cuisine.flag} style={styles.flag} />
+          <Text style={styles.title}>{cuisine.title}</Text>
+          <Text style={styles.text}>{cuisine.description}</Text>
+          <ArrowRightIcon size={20} style={{ marginTop: 8 }} />
+        </View>
         <Image
           source={cuisine?.image}
           resizeMode="contain"
           style={styles.image}
         />
-        <View style={styles.textContainer}>
-          <Image source={cuisine.flag} style={styles.flag} />
-          <Text style={styles.title}>{cuisine.title}</Text>
-          <Text style={styles.text}>{cuisine.description}</Text>
-        </View>
-      </Pressable>
-    </View>
+      </View>
+    </Pressable>
   );
 }
 
@@ -25,22 +34,17 @@ const styles = StyleSheet.create({
     boxShadow: "0 2px 12px rgba(0, 0, 0, 0.2)",
   },
   card: {
-    width: "100%",
-    height: 150,
-    borderWidth: 1,
+    flexDirection: "row",
+    alignItems: "center",
     borderRadius: 10,
-    borderColor: "transparent",
     overflow: "hidden",
-    justifyContent: "center",
+    paddingVertical: 15,
   },
   textContainer: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    justifyContent: "center",
+    flex: 1,
     gap: 8,
     paddingLeft: 16,
+    paddingRight: 8,
   },
   flag: {
     width: 40,
@@ -50,13 +54,15 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
+    fontFamily: Fonts.heading,
   },
   text: {
     fontWeight: "100",
+    fontFamily: Fonts.body,
+    color: "gray",
   },
   image: {
     width: "50%",
-    height: "50%",
-    alignSelf: "flex-end",
+    height: "55%",
   },
 });
