@@ -26,7 +26,7 @@ export default function Navbar() {
   }
 
   return (
-    <BlurView intensity={80} tint="light" style={styles.navbarContainer}>
+    <BlurView intensity={80} tint="prominent" style={styles.navbarContainer}>
       {navItem.map((item) => (
         <NavItem key={item.id} item={item} onPress={() => goTo(item.screen)} />
       ))}
