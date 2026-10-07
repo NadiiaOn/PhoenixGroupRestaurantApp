@@ -1,9 +1,9 @@
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 
-export default function NewsBanner({ banner }) {
+export default function NewsBanner({ banner, onPress }) {
   return (
     <View>
-      <Pressable style={styles.container}>
+      <Pressable style={styles.container} onPress={() => onPress?.(banner)}>
         <View style={styles.imageContainer}>
           <Image source={banner.image} style={styles.image} />
         </View>
