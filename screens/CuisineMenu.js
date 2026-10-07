@@ -12,7 +12,7 @@ export default function CuisineMenu({ navigation }) {
       image: require("../assets/cusineCard/italianfood.png"),
       flag: require("../assets/flags/italy.png"),
       background: "rgba(60, 152, 92, 0.1)",
-      screen: "Byt till Italian screen och ta bort kommentar i goTo()!!",
+      country: "Italy",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function CuisineMenu({ navigation }) {
       image: require("../assets/cusineCard/swedishfood.png"),
       flag: require("../assets/flags/sweden.png"),
       background: "rgba(55, 64, 150, 0.1)",
-      screen: "Byt till Swedish screen och ta bort kommentar i goTo()!!",
+      country: "Sweden",
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export default function CuisineMenu({ navigation }) {
       image: require("../assets/cusineCard/indonesianfood.png"),
       flag: require("../assets/flags/indonesia.png"),
       background: "rgba(151, 77, 77, 0.15)",
-      screen: "Byt till Indo screen och ta bort kommentar i goTo()!",
+      country: "Indonesia",
     },
 
     {
@@ -40,13 +40,12 @@ export default function CuisineMenu({ navigation }) {
       image: require("../assets/cusineCard/ukrainefood.png"),
       flag: require("../assets/flags/ukraine.png"),
       background: "rgba(71, 79, 151, 0.15)",
-      screen: "Byt till Ukraine screen och ta bort kommentar i goTo()!",
+      country: "Ukraine",
     },
   ];
 
-  function goTo(screen) {
-    // navigation.navigate(screen);
-    console.log(screen);
+  function goTo(country) {
+    navigation.navigate("ProductCardMenu", { country });
   }
 
   return (
@@ -56,7 +55,7 @@ export default function CuisineMenu({ navigation }) {
           <CuisineCard
             key={cuisine.id}
             cuisine={cuisine}
-            onPress={() => goTo(cuisine.screen)}
+            onPress={() => goTo(cuisine.country)}
           />
         ))}
       </ScrollView>

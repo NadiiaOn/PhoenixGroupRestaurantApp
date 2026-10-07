@@ -16,12 +16,14 @@ export default function Home({ navigation }) {
     setBanners(Banners);
   }, []);
 
-    function handleBannerPress(banner) {
+  function handleBannerPress(banner) {
     if (banner.productId) {
       navigation.navigate("ProductDetail", {
         productId: banner.productId,
         type: banner.type,
       });
+    } else if (banner.country) {
+      navigation.navigate("ProductCardMenu", { country: banner.country });
     }
   }
 
@@ -39,7 +41,7 @@ export default function Home({ navigation }) {
             return <NewsBanner banner={item} onPress={handleBannerPress} />;
           }
           if (index === 1) {
-            return <NewsBanner2 banner={item} />;
+            return <NewsBanner2 banner={item} onPress={handleBannerPress}/>;
           }
           if (index === 2) {
             return <StoryBanner banner={item} />;
