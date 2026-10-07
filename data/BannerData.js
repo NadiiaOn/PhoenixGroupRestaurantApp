@@ -17,6 +17,7 @@ export const Banners = [
       "Discover delicious Indo dishes with authentic flavors and fresh ingredients!",
     label: "New Cuisine",
     image: require("../assets/indonesian/Nasi_bg.png"),
+    country: "Indonesia"
   },
   {
     id: 3,
