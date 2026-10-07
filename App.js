@@ -48,7 +48,7 @@ export default function App() {
           component={ProductDetailScreen}
           options={{
             title: "",
-            headShown: false
+            headShown: false,
           }}
         />
         <Stack.Screen name="CuisineMenu" component={CuisineMenu} />
