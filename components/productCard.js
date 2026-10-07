@@ -1,4 +1,5 @@
-import { View, Text, Image, Pressable, StyleSheet, Platform } from "react-native";
+import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
+import { Image } from "expo-image";
 
 export default function ProductCard({ meal, onPress }) {
   const { name, price, category, description, image, country } = meal;
@@ -28,7 +29,7 @@ export default function ProductCard({ meal, onPress }) {
           <Text style={styles.name} numberOfLines={1}>
             {name}
           </Text>
-          <Text style={styles.price}>{price} kr</Text>
+          <Text style={styles.price}>${price}</Text>
         </View>
 
         {description ? (
@@ -50,7 +51,10 @@ function Tag({ label, variant = "primary" }) {
   return (
     <View style={[styles.tag, variant === "secondary" && styles.tagSecondary]}>
       <Text
-        style={[styles.tagText, variant === "secondary" && styles.tagTextSecondary]}
+        style={[
+          styles.tagText,
+          variant === "secondary" && styles.tagTextSecondary,
+        ]}
       >
         {label}
       </Text>

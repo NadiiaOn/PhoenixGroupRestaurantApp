@@ -1,6 +1,6 @@
 import { SectionList, View, Text, StyleSheet } from "react-native";
-import ProductCard from "../components/ProductCard";
 import { starters, meals, desserts, drinks } from "../data/Products";
+import ProductCard from "../components/ProductCard";
 import Navbar from "../components/Navbar";
 
 const allSections = [
@@ -26,28 +26,31 @@ export default function ProductCardMenuScreen({ route, navigation }) {
   }
 
   return (
-  <View style={styles.container}>
-    <SectionList
-      style={styles.list}
-      contentContainerStyle={styles.content}
-      sections={sections}
-      keyExtractor={(item) => item.id.toString()}
-      renderSectionHeader={({ section }) => (
-        <Text style={styles.sectionTitle}>{section.title}</Text>
-      )}
-      renderItem={({ item, section }) => (
-        <ProductCard meal={item} onPress={(product) => handlePress(product, section.type)} />
-      )}
-      stickySectionHeadersEnabled={false}
-      ListEmptyComponent={
-        <View style={styles.empty}>
-          <Text style={styles.emptyText}>No dishes from {country} yet</Text>
-        </View>
-      }
-    />
+    <View style={styles.container}>
+      <SectionList
+        style={styles.list}
+        contentContainerStyle={styles.content}
+        sections={sections}
+        keyExtractor={(item) => item.id.toString()}
+        renderSectionHeader={({ section }) => (
+          <Text style={styles.sectionTitle}>{section.title}</Text>
+        )}
+        renderItem={({ item, section }) => (
+          <ProductCard
+            meal={item}
+            onPress={(product) => handlePress(product, section.type)}
+          />
+        )}
+        stickySectionHeadersEnabled={false}
+        ListEmptyComponent={
+          <View style={styles.empty}>
+            <Text style={styles.emptyText}>No dishes from {country} yet</Text>
+          </View>
+        }
+      />
 
-    <Navbar />
-  </View>
+      <Navbar />
+    </View>
   );
 }
 

@@ -13,6 +13,13 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const resetContactFields = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
   return (
     <View style={[styles.container, { minHeight: height * 0.9 }]}>
       {/* Introduction */}
@@ -59,7 +66,7 @@ export default function Contact() {
             textAlignVertical="top"
           />
         </View>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={resetContactFields}>
           <Text style={styles.buttonText}>Send Message</Text>
         </Pressable>
       </View>

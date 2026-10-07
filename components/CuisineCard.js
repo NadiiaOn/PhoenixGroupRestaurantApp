@@ -1,4 +1,5 @@
-import { StyleSheet, View, Image, Text, Pressable } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
+import { Image } from "expo-image";
 import { ArrowRightIcon } from "phosphor-react-native";
 import Fonts from "../constants/Fonts";
 

@@ -1,5 +1,7 @@
-import { ScrollView, View, Text, Image, StyleSheet } from "react-native";
+import { ScrollView, View, Text, StyleSheet } from "react-native";
+import { Image } from "expo-image";
 import { starters, meals, desserts, drinks } from "../data/Products";
+import Navbar from "../components/Navbar";
 
 const productLists = { starters, meals, desserts, drinks };
 
@@ -31,54 +33,60 @@ export default function ProductDetailScreen({ route }) {
   const imageSource = typeof image === "string" ? { uri: image } : image;
 
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
-      {imageSource ? (
-        <Image source={imageSource} style={styles.image} resizeMode="cover" />
-      ) : (
-        <View style={[styles.image, styles.imagePlaceholder]}>
-          <Text style={styles.placeholderText}>Image not found</Text>
+    <View style={styles.wrapper}>
+      <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
+        {imageSource ? (
+          <Image source={imageSource} style={styles.image} resizeMode="cover" />
+        ) : (
+          <View style={[styles.image, styles.imagePlaceholder]}>
+            <Text style={styles.placeholderText}>Image not found</Text>
+          </View>
+        )}
+
+        <View style={styles.body}>
+          <View style={styles.headerRow}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.price}>${price}</Text>
+          </View>
+
+          <View style={styles.tagRow}>
+            {category ? <Tag label={category} /> : null}
+            {country ? <Tag label={country} variant="secondary" /> : null}
+            {vegetarian ? <Tag label="Vegetarian" variant="green" /> : null}
+          </View>
+
+          {description ? (
+            <Text style={styles.description}>{description}</Text>
+          ) : null}
+
+          <Section title="Ingredients">
+            {ingredients.length > 0 ? (
+              ingredients.map((ingredient) => (
+                <Text key={ingredient} style={styles.listItem}>
+                  • {ingredient}
+                </Text>
+              ))
+            ) : (
+              <Text style={styles.emptyText}>No ingredients listed</Text>
+            )}
+          </Section>
+
+          <Section title="Allergens">
+            {allergies.length > 0 ? (
+              <View style={styles.tagRow}>
+                {allergies.map((allergy) => (
+                  <Tag key={allergy} label={allergy} variant="warning" />
+                ))}
+              </View>
+            ) : (
+              <Text style={styles.emptyText}>No known allergens</Text>
+            )}
+          </Section>
         </View>
-      )}
+      </ScrollView>
 
-      <View style={styles.body}>
-        <View style={styles.headerRow}>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.price}>{price} kr</Text>
-        </View>
-
-        <View style={styles.tagRow}>
-          {category ? <Tag label={category} /> : null}
-          {country ? <Tag label={country} variant="secondary" /> : null}
-          {vegetarian ? <Tag label="Vegetarian" variant="green" /> : null}
-        </View>
-
-        {description ? <Text style={styles.description}>{description}</Text> : null}
-
-        <Section title="Ingredients">
-          {ingredients.length > 0 ? (
-            ingredients.map((ingredient) => (
-              <Text key={ingredient} style={styles.listItem}>
-                • {ingredient}
-              </Text>
-            ))
-          ) : (
-            <Text style={styles.emptyText}>No ingredients listed</Text>
-          )}
-        </Section>
-
-        <Section title="Allergens">
-          {allergies.length > 0 ? (
-            <View style={styles.tagRow}>
-              {allergies.map((allergy) => (
-                <Tag key={allergy} label={allergy} variant="warning" />
-              ))}
-            </View>
-          ) : (
-            <Text style={styles.emptyText}>No known allergens</Text>
-          )}
-        </Section>
-      </View>
-    </ScrollView>
+      <Navbar />
+    </View>
   );
 }
 
@@ -94,12 +102,17 @@ function Section({ title, children }) {
 function Tag({ label, variant = "primary" }) {
   return (
     <View style={[styles.tag, styles[`tag_${variant}`]]}>
-      <Text style={[styles.tagText, styles[`tagText_${variant}`]]}>{label}</Text>
+      <Text style={[styles.tagText, styles[`tagText_${variant}`]]}>
+        {label}
+      </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
   screen: {
     flex: 1,
     backgroundColor: "#fff",

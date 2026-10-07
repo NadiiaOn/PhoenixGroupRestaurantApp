@@ -1,4 +1,5 @@
-import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
+import { Image } from "expo-image";
 
 export default function NewsBanner({ banner, onPress }) {
   return (

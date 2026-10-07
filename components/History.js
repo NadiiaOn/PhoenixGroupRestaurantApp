@@ -12,33 +12,34 @@ function History({ visible, onClose }) {
       <View style={styles.overlay}>
         <View style={styles.modalContent}>
           <Text style={styles.title}>Our history</Text>
-          <Text style={styles.text}>Allt började med en fråga.</Text>
+          <Text style={styles.text}>It all started with a question.</Text>
           <Text style={styles.text}>
-            I januari 2026 undrade Nadiia, nyinflyttad till Sverige, i en
-            matgrupp var man hittar riktigt rågbröd.
+            In January 2026, Nadiia, who had just moved to Sweden, asked in a
+            food group where to find real rye bread.
           </Text>
           <Text style={styles.text}>
-            Tre svarade: kocken Joel, fiskaren Herman och snickaren Viktor.
+            Three people answered: Joel the chef, Herman the fisherman and
+            Viktor the carpenter.
           </Text>
           <Text style={styles.text}>
-            De träffades i Joels lilla kök. Brödet blev bränt, men de pratade
-            till gryningen och hade en plan.
+            They met in Joel's small kitchen. The bread got burnt, but they
+            talked until dawn and had a plan.
           </Text>
           <Text style={styles.text}>
-            Till våren öppnade de en butik, och Viktor byggde ett långt bord.
+            By spring they had opened a shop, and Viktor built a long table.
           </Text>
           <Text style={styles.text}>
-            Kunderna kom för brödet men stannade på lunch, och snart blev
-            butiken en restaurang.
+            Customers came for the bread but stayed for lunch, and soon the shop
+            became a restaurant.
           </Text>
           <Text style={styles.text}>
-            Kunderna kom för brödet men stannade på lunch, och snart blev
-            butiken en restaurang.
+            Customers came for the bread but stayed for lunch, and soon the shop
+            became a restaurant.
           </Text>
           <Text style={styles.text}>
-            Viktors bord står kvar mitt i matsalen.
+            Viktor's table still stands in the middle of the dining room.
           </Text>
-          <Text style={styles.text}>Slå dig ned, här finns alltid plats.</Text>
+          <Text style={styles.text}>Sit down, there's always room here.</Text>
           <Pressable
             style={({ pressed }) => [
               styles.closeButton,
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: Fonts.body,
     marginBottom: 20,
-    width: "90%",
+    width: "95%",
     alignSelf: "center",
     textAlign: "justify",
   },
