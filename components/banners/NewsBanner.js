@@ -58,14 +58,14 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    fontSize: 40,
+    fontSize: 26,
     fontWeight: "800",
     color: "#ffffff",
     textTransform: "uppercase",
   },
 
   name: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: "600",
     color: "#fff",
     flexShrink: 1,

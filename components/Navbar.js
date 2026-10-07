@@ -1,34 +1,68 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   HouseIcon,
   MapPinIcon,
   BowlFoodIcon,
-  BookOpenTextIcon,
   ShoppingCartIcon,
 } from "phosphor-react-native";
 import { useNavigation } from "@react-navigation/native";
 import { BlurView } from "expo-blur";
 
 import NavItem from "./NavItem";
+import { useState } from "react";
+import Restaurant from "../constants/restaurant";
+import { openMaps } from "../utils/openMaps";
 
 export default function Navbar() {
+  const [isOpening, setIsOpening] = useState(false);
   const navigation = useNavigation();
-  const navItem = [
-    { id: 1, screen: "Home", icon: HouseIcon },
-    { id: 2, screen: "Find us", icon: MapPinIcon },
-    { id: 3, screen: "Food", icon: BowlFoodIcon },
-    { id: 4, screen: "Story", icon: BookOpenTextIcon },
-    { id: 5, screen: "Order", icon: ShoppingCartIcon },
+  const navItems = [
+    { id: 1, name: "Home", screen: "Home", icon: HouseIcon },
+    {
+      id: 2,
+      name: "Find Us",
+      icon: MapPinIcon,
+    },
+    { id: 3, name: "Menu", screen: "CuisineMenu", icon: BowlFoodIcon },
+    { id: 4, name: "Order", screen: "Order", icon: ShoppingCartIcon },
   ];
 
   function goTo(screen) {
     navigation.navigate(screen);
   }
 
+  const handleMapPress = async () => {
+    if (isOpening) {
+      return;
+    }
+    setIsOpening(true);
+
+    try {
+      await openMaps({
+        address: Restaurant.address,
+        label: Restaurant.name,
+        latitude: Restaurant.latitude,
+        longitude: Restaurant.longitude,
+      });
+    } finally {
+      setIsOpening(false);
+    }
+  };
+
   return (
-    <BlurView intensity={80} tint="light" style={styles.navbarContainer}>
-      {navItem.map((item) => (
-        <NavItem key={item.id} item={item} onPress={() => goTo(item.screen)} />
+    <BlurView intensity={80} tint="prominent" style={styles.navbarContainer}>
+      {navItems.map((item) => (
+        <NavItem
+          key={item.id}
+          item={item}
+          onPress={() => {
+            if (item.name === "Find Us") {
+              handleMapPress();
+            } else {
+              goTo(item.screen);
+            }
+          }}
+        />
       ))}
     </BlurView>
   );
@@ -38,9 +72,9 @@ const styles = StyleSheet.create({
   navbarContainer: {
     height: 65,
     borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.5)",
+    borderColor: "rgba(221, 221, 221, 0.8)",
     borderRadius: 50,
-    backgroundColor: "rgba(250, 190, 180, 0.25)",
+    backgroundColor: "rgba(221, 221, 221, 0.7)",
     overflow: "hidden",
     flexDirection: "row",
     alignItems: "center",
