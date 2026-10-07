@@ -26,6 +26,13 @@ export default function CategoryMenu() {
       image: require("../assets/categoryCard/Tiramisu-bg.png"),
       path: "",
     },
+    {
+      id: 4,
+      title: "Beverage",
+      description: "All our Drinks",
+      image: "",
+      path: "",
+    },
   ];
 
   // För imorgon 7st är som placeholders
