@@ -1,20 +1,34 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import Logo from "../Logo";
-export default function StoryBanner2({ banner }) {
+import { useState } from "react";
+import History from "../History";
+
+export default function StoryBanner({ banner }) {
+  const [historyVisible, setHistoryVisible] = useState(false);
+
   return (
-    <Pressable style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Logo size={150} />
-      </View>
-      <View style={styles.content}>
-        <Text style={styles.name}>{banner.name}</Text>
-        <Text style={styles.description}>{banner.description}</Text>
-        <View style={styles.infoContainer}>
-          <Text style={styles.established}>Est. {banner.established}</Text>
-          <Text style={styles.label}>{banner.label}</Text>
+    <>
+      <Pressable
+        style={styles.container}
+        onPress={() => setHistoryVisible(true)}
+      >
+        <View style={styles.imageContainer}>
+          <Logo size={150} />
         </View>
-      </View>
-    </Pressable>
+        <View style={styles.content}>
+          <Text style={styles.name}>{banner.name}</Text>
+          <Text style={styles.description}>{banner.description}</Text>
+          <View style={styles.infoContainer}>
+            <Text style={styles.established}>Est. {banner.established}</Text>
+            <Text style={styles.label}>{banner.label}</Text>
+          </View>
+        </View>
+      </Pressable>
+      <History
+        visible={historyVisible}
+        onClose={() => setHistoryVisible(false)}
+      />
+    </>
   );
 }
 const styles = StyleSheet.create({

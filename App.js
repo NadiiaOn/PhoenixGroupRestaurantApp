@@ -1,5 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import Home from "./screens/Home";
+import ProductDetailScreen from "./screens/ProductDetailScreen";
+import ProductCardMenuScreen from "./screens/ProductCardMenuScreen.js";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CuisineMenu from "./screens/CuisineMenu";
 import { useFonts } from "expo-font";
@@ -44,7 +46,23 @@ export default function App() {
           component={Home}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="FoodMenu" component={FoodMenu} />
+        <Stack.Screen
+          name="ProductDetail"
+          component={ProductDetailScreen}
+          options={{
+            title: "",
+            headShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ProductCardMenu"
+          component={ProductCardMenuScreen}
+          options={({ route }) => ({
+            title: route.params.country,
+            headerTitleStyle: { fontFamily: "Rubik-Bold" },
+            headerTintColor: "#222",
+          })}
+        />
         <Stack.Screen name="CuisineMenu" component={CuisineMenu} />
         <Stack.Screen name="CategoryMenu" component={CategoryMenu} />
       </Stack.Navigator>
