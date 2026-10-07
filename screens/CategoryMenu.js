@@ -10,28 +10,28 @@ export default function CategoryMenu({ navigation }) {
       title: "Starters",
       description: "All our Starters",
       image: require("../assets/indonesian/Lumpia.png"),
-      path: "",
+      type: "starters",
     },
     {
       id: 2,
       title: "Meals",
       description: "All our Meals",
       image: require("../assets/sweden/pyttipanna.png"),
-      path: "",
+      type: "meals",
     },
     {
       id: 3,
       title: "Desserts",
       description: "All our Desserts",
       image: require("../assets/italian/Tiramisu.png"),
-      path: "",
+      type: "desserts",
     },
     {
       id: 4,
       title: "Drinks",
       description: "All our Drinks",
       image: require("../assets/categoryCard/Cola-bg.png"),
-      path: "",
+      type: "drinks",
     },
   ];
 
@@ -136,8 +136,8 @@ export default function CategoryMenu({ navigation }) {
     },
   ];
 
-  function goTo(country) {
-    navigation.navigate("ProductCardMenu", { country });
+  function goTo(params) {
+    navigation.navigate("ProductCardMenu", params);
   }
 
   return (
@@ -149,14 +149,18 @@ export default function CategoryMenu({ navigation }) {
           <CategoryCard
             key={category.id}
             item={category}
-            onPress={() => goTo(category.path)}
+            onPress={() => goTo({ type: category.type })}
           />
         ))}
 
         <Text style={styles.sectionTitle}>Sub</Text>
 
         {subCategories.map((subCategory) => (
-          <CategoryCard key={subCategory.id} item={subCategory} />
+          <CategoryCard
+            key={subCategory.id}
+            item={subCategory}
+            onPress={() => goTo({ subCategory: subCategory.title })}
+          />
         ))}
       </ScrollView>
 

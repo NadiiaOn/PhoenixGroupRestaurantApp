@@ -1,5 +1,6 @@
-import { StyleSheet, View, Text, Pressable, Image } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 import Fonts from "../constants/Fonts";
+import { Image } from "expo-image";
 
 export default function CategoryCard({ item, onPress }) {
   return (

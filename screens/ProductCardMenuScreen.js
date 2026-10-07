@@ -11,13 +11,18 @@ const allSections = [
 ];
 
 export default function ProductCardMenuScreen({ route, navigation }) {
-  const { country } = route.params;
+  const { country, subCategory, type } = route.params ?? {};
 
   const sections = allSections
+    .filter((section) => !type || section.type === type)
     .map((section) => ({
       title: section.title,
       type: section.type,
-      data: section.products.filter((p) => p.country === country),
+      data: section.products.filter((p) => {
+        const matchesCountry = !country || p.country === country;
+        const matchesSub = !subCategory || p.subCategory === subCategory;
+        return matchesCountry && matchesSub;
+      }),
     }))
     .filter((section) => section.data.length > 0);
 
@@ -25,29 +30,36 @@ export default function ProductCardMenuScreen({ route, navigation }) {
     navigation.navigate("ProductDetail", { productId: product.id, type });
   }
 
+  const emptyLabel =
+    [subCategory, country].filter(Boolean).join(" from ") || "this selection";
+
   return (
-    <View style={styles.container}>
-      <SectionList
-        style={styles.list}
-        contentContainerStyle={styles.content}
-        sections={sections}
-        keyExtractor={(item) => item.id.toString()}
-        renderSectionHeader={({ section }) => (
-          <Text style={styles.sectionTitle}>{section.title}</Text>
-        )}
-        renderItem={({ item, section }) => (
-          <ProductCard
-            meal={item}
-            onPress={(product) => handlePress(product, section.type)}
-          />
-        )}
-        stickySectionHeadersEnabled={false}
-        ListEmptyComponent={
-          <View style={styles.empty}>
-            <Text style={styles.emptyText}>No dishes from {country} yet</Text>
-          </View>
-        }
-      />
+    <View style={styles.wrapper}>
+      <View style={styles.container}>
+        <SectionList
+          style={styles.list}
+          contentContainerStyle={styles.content}
+          sections={sections}
+          keyExtractor={(item) => item.id.toString()}
+          renderSectionHeader={({ section }) => (
+            <Text style={styles.sectionTitle}>{section.title}</Text>
+          )}
+          renderItem={({ item, section }) => (
+            <ProductCard
+              meal={item}
+              onPress={(product) => handlePress(product, section.type)}
+            />
+          )}
+          stickySectionHeadersEnabled={false}
+          ListEmptyComponent={
+            <View style={styles.empty}>
+              <Text style={styles.emptyText}>
+                No dishes found for {emptyLabel}
+              </Text>
+            </View>
+          }
+        />
+      </View>
 
       <Navbar />
     </View>
@@ -55,13 +67,19 @@ export default function ProductCardMenuScreen({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
+
   screen: {
     flex: 1,
     backgroundColor: "#fff",
   },
+
   content: {
     paddingBottom: 24,
   },
+
   sectionTitle: {
     fontFamily: "Rubik-Bold",
     fontSize: 22,
@@ -70,10 +88,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 4,
   },
+
   empty: {
     padding: 32,
     alignItems: "center",
   },
+
   emptyText: {
     fontFamily: "NunitoSans-Regular",
     fontSize: 16,
