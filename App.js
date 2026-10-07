@@ -63,6 +63,7 @@ export default function App() {
             headerTintColor: "#222",
           })}
         />
+        <Stack.Screen name="FoodMenu" component={FoodMenu} />
         <Stack.Screen name="CuisineMenu" component={CuisineMenu} />
         <Stack.Screen name="CategoryMenu" component={CategoryMenu} />
       </Stack.Navigator>

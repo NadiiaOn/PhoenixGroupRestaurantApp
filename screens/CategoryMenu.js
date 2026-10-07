@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import CategoryCard from "../components/CategoryCard";
 import Fonts from "../constants/Fonts";
 
-export default function CategoryMenu() {
+export default function CategoryMenu({ navigation }) {
   const mainCategories = [
     {
       id: 1,
@@ -35,7 +35,6 @@ export default function CategoryMenu() {
     },
   ];
 
-  // För imorgon 7st är som placeholders
   const subCategories = [
     {
       id: 1,
@@ -111,7 +110,7 @@ export default function CategoryMenu() {
       id: 11,
       title: "Traditional",
       description: "Traditional drinks from our home countries",
-      image: "",
+      image: require("../assets/drinks/uzvar.png"),
       path: "",
     },
     {
@@ -125,17 +124,21 @@ export default function CategoryMenu() {
       id: 13,
       title: "Hot",
       description: "All our hot drinks",
-      image: "",
+      image: require("../assets/drinks/espresso.png"),
       path: "",
     },
     {
       id: 14,
       title: "Dessert Drink",
       description: "Sweet drinks to enjoy as a dessert",
-      image: "",
+      image: require("../assets/drinks/es-teler.png"),
       path: "",
     },
   ];
+
+  function goTo(country) {
+    navigation.navigate("ProductCardMenu", { country });
+  }
 
   return (
     <View style={styles.container}>
