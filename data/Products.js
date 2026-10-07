@@ -19,6 +19,7 @@ export const starters = [
     country: "Italy",
     allergies: ["Gluten"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 2,
@@ -39,6 +40,7 @@ export const starters = [
     country: "Italy",
     allergies: ["Milk"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 3,
@@ -64,6 +66,7 @@ export const starters = [
     country: "Italy",
     allergies: ["Gluten", "Eggs", "Milk"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 4,
@@ -77,6 +80,7 @@ export const starters = [
     country: "Italy",
     allergies: [],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 5,
@@ -98,6 +102,7 @@ export const starters = [
     country: "Sweden",
     allergies: ["Crustaceans", "Fish", "Eggs", "Gluten", "Milk", "Mustard"],
     vegetarian: false,
+    subCategory: "Fish",
   },
   {
     id: 6,
@@ -110,6 +115,7 @@ export const starters = [
     country: "Sweden",
     allergies: ["Fish", "Mustard"],
     vegetarian: false,
+    subCategory: "Fish",
   },
   {
     id: 7,
@@ -131,6 +137,7 @@ export const starters = [
     country: "Sweden",
     allergies: ["Gluten", "Milk", "Eggs"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 8,
@@ -151,6 +158,7 @@ export const starters = [
     country: "Sweden",
     allergies: ["Gluten"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 9,
@@ -169,6 +177,7 @@ export const starters = [
     country: "Sweden",
     allergies: ["Fish", "Eggs", "Gluten"],
     vegetarian: false,
+    subCategory: "Fish",
   },
   {
     id: 10,
@@ -188,6 +197,7 @@ export const starters = [
     country: "Indonesia",
     allergies: ["Peanuts", "Soy"],
     vegetarian: false,
+    subCategory: "Chicken",
   },
   {
     id: 11,
@@ -207,6 +217,7 @@ export const starters = [
     country: "Indonesia",
     allergies: ["Gluten", "Soy"],
     vegetarian: false,
+    subCategory: "Chicken",
   },
 ];
 
@@ -231,6 +242,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Gluten", "Eggs", "Milk"],
     vegetarian: false,
+    subCategory: "Pasta",
   },
   {
     id: 2,
@@ -262,6 +274,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Gluten", "Eggs", "Milk", "Celery", "Sulphites"],
     vegetarian: false,
+    subCategory: "Pasta",
   },
   {
     id: 3,
@@ -282,6 +295,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Gluten"],
     vegetarian: true,
+    subCategory: "Pasta",
   },
   {
     id: 4,
@@ -308,6 +322,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Milk", "Celery", "Sulphites"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 5,
@@ -329,6 +344,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Gluten", "Milk"],
     vegetarian: true,
+    subCategory: "Pizza",
   },
   {
     id: 6,
@@ -352,6 +368,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Gluten", "Milk"],
     vegetarian: false,
+    subCategory: "Pizza",
   },
   {
     id: 7,
@@ -375,6 +392,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Milk"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 8,
@@ -401,6 +419,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Celery", "Sulphites"],
     vegetarian: false,
+    subCategory: "Chicken",
   },
   {
     id: 9,
@@ -422,6 +441,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Gluten", "Milk", "Sulphites"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 10,
@@ -444,6 +464,7 @@ export const meals = [
     country: "Italy",
     allergies: ["Fish"],
     vegetarian: false,
+    subCategory: "Fish",
   },
   {
     id: 11,
@@ -477,6 +498,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Milk", "Celery"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 12,
@@ -501,6 +523,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Gluten", "Milk"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 13,
@@ -523,6 +546,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Eggs", "Milk"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 14,
@@ -547,6 +571,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Milk"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 15,
@@ -570,6 +595,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Eggs", "Gluten"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 16,
@@ -593,6 +619,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Eggs", "Milk", "Gluten"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 17,
@@ -615,6 +642,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Fish", "Gluten", "Milk"],
     vegetarian: false,
+    subCategory: "Fish",
   },
   {
     id: 18,
@@ -641,6 +669,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Gluten", "Milk", "Eggs"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 19,
@@ -667,6 +696,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Milk", "Gluten"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 20,
@@ -692,6 +722,7 @@ export const meals = [
     country: "Ukraine",
     allergies: ["Milk"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 21,
@@ -716,6 +747,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Gluten", "Eggs", "Milk"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 22,
@@ -738,6 +770,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Eggs", "Milk", "Gluten"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 23,
@@ -761,6 +794,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Milk", "Eggs"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 24,
@@ -782,6 +816,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Gluten", "Milk", "Eggs"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 25,
@@ -802,6 +837,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Eggs", "Milk"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 26,
@@ -823,6 +859,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Eggs", "Milk", "Mustard"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 27,
@@ -843,6 +880,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Fish", "Gluten", "Milk"],
     vegetarian: false,
+    subCategory: "Fish",
   },
   {
     id: 28,
@@ -863,6 +901,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Mustard", "Gluten"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 29,
@@ -886,6 +925,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Gluten", "Milk"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 30,
@@ -907,6 +947,7 @@ export const meals = [
     country: "Sweden",
     allergies: ["Gluten", "Milk"],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 31,
@@ -927,6 +968,7 @@ export const meals = [
     country: "Indonesia",
     allergies: ["Egg", "Soy", "Shellfish"],
     vegetarian: false,
+    subCategory: "Chicken",
   },
   {
     id: 32,
@@ -948,6 +990,7 @@ export const meals = [
     country: "Indonesia",
     allergies: [],
     vegetarian: false,
+    subCategory: "Meat",
   },
   {
     id: 34,
@@ -967,6 +1010,7 @@ export const meals = [
     country: "Indonesia",
     allergies: ["Gluten", "Egg", "Soy"],
     vegetarian: false,
+    subCategory: "Chicken",
   },
   {
     id: 35,
@@ -987,6 +1031,7 @@ export const meals = [
     country: "Indonesia",
     allergies: ["Soy"],
     vegetarian: true,
+    subCategory: "Vegetarian",
   },
   {
     id: 36,
@@ -1007,6 +1052,7 @@ export const meals = [
     country: "Indonesia",
     allergies: ["Fish", "Soy"],
     vegetarian: false,
+    subCategory: "Fish",
   },
 ];
 
@@ -1022,6 +1068,7 @@ export const desserts = [
     country: "Italy",
     allergies: ["Milk", "Gluten", "Eggs"],
     vegetarian: true,
+    subCategory: "Creamy",
   },
   {
     id: 2,
@@ -1034,6 +1081,7 @@ export const desserts = [
     country: "Italy",
     allergies: ["Milk"],
     vegetarian: true,
+    subCategory: "Creamy",
   },
   {
     id: 3,
@@ -1047,6 +1095,7 @@ export const desserts = [
     country: "Italy",
     allergies: ["Gluten", "Milk", "Eggs"],
     vegetarian: true,
+    subCategory: "Pastry",
   },
   {
     id: 4,
@@ -1072,6 +1121,7 @@ export const desserts = [
     country: "Ukraine",
     allergies: ["Gluten", "Eggs", "Milk"],
     vegetarian: true,
+    subCategory: "Pastry",
   },
   {
     id: 5,
@@ -1100,6 +1150,7 @@ export const desserts = [
     country: "Ukraine",
     allergies: ["Milk", "Eggs", "Gluten", "Nuts"],
     vegetarian: true,
+    subCategory: "Cheesecake",
   },
   {
     id: 6,
@@ -1120,6 +1171,7 @@ export const desserts = [
     country: "Sweden",
     allergies: ["Gluten", "Eggs", "Milk"],
     vegetarian: true,
+    subCategory: "Cake",
   },
   {
     id: 7,
@@ -1141,6 +1193,7 @@ export const desserts = [
     country: "Sweden",
     allergies: ["Milk", "Eggs", "Nuts", "Gluten"],
     vegetarian: true,
+    subCategory: "Cheesecake",
   },
   {
     id: 8,
@@ -1162,6 +1215,7 @@ export const desserts = [
     country: "Sweden",
     allergies: ["Gluten"],
     vegetarian: true,
+    subCategory: "Pastry",
   },
   {
     id: 9,
@@ -1181,6 +1235,7 @@ export const desserts = [
     country: "Sweden",
     allergies: ["Gluten", "Eggs", "Milk", "Nuts"],
     vegetarian: true,
+    subCategory: "Cake",
   },
   {
     id: 10,
@@ -1203,6 +1258,7 @@ export const desserts = [
     country: "Sweden",
     allergies: ["Gluten", "Milk", "Eggs", "Nuts"],
     vegetarian: true,
+    subCategory: "Pastry",
   },
   {
     id: 11,
@@ -1220,6 +1276,7 @@ export const desserts = [
     country: "Indonesia",
     allergies: [],
     vegetarian: true,
+    subCategory: "Cake",
   },
 ];
 
@@ -1243,6 +1300,7 @@ export const drinks = [
     country: "Ukraine",
     allergies: ["Sulphites", "Honey"],
     vegetarian: true,
+    subCategory: "Traditional",
   },
   {
     id: 2,
@@ -1256,6 +1314,7 @@ export const drinks = [
     country: "Ukraine",
     allergies: ["Gluten", "Honey"],
     vegetarian: true,
+    subCategory: "Traditional",
   },
   {
     id: 3,
@@ -1278,6 +1337,7 @@ export const drinks = [
     country: "Sweden",
     allergies: ["Gluten"],
     vegetarian: true,
+    subCategory: "Soda",
   },
   {
     id: 4,
@@ -1300,6 +1360,7 @@ export const drinks = [
     country: "Sweden",
     allergies: [],
     vegetarian: true,
+    subCategory: "Soda",
   },
   {
     id: 5,
@@ -1313,6 +1374,7 @@ export const drinks = [
     country: "Italy",
     allergies: [],
     vegetarian: true,
+    subCategory: "Hot",
   },
   {
     id: 6,
@@ -1336,6 +1398,7 @@ export const drinks = [
     country: "Italy",
     allergies: [],
     vegetarian: true,
+    subCategory: "Soda",
   },
   {
     id: 7,
@@ -1360,6 +1423,7 @@ export const drinks = [
     country: "Indonesia",
     allergies: ["Milk", "Coconut"],
     vegetarian: true,
+    subCategory: "Dessert Drink",
   },
   {
     id: 8,
@@ -1380,6 +1444,7 @@ export const drinks = [
     country: "Indonesia",
     allergies: ["Honey"],
     vegetarian: true,
+    subCategory: "Hot",
   },
   {
     id: 9,
@@ -1400,6 +1465,7 @@ export const drinks = [
     country: "USA",
     allergies: [],
     vegetarian: true,
+    subCategory: "Soda",
   },
   {
     id: 10,
@@ -1427,6 +1493,7 @@ export const drinks = [
     country: "Germany",
     allergies: ["Phenylalanine"],
     vegetarian: true,
+    subCategory: "Soda",
   },
   {
     id: 11,
@@ -1446,5 +1513,6 @@ export const drinks = [
     country: "Germany",
     allergies: [],
     vegetarian: true,
+    subCategory: "Soda",
   },
 ];

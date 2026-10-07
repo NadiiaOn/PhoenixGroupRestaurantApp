@@ -23,7 +23,7 @@ export default function Navbar() {
       name: "Find Us",
       icon: MapPinIcon,
     },
-    { id: 3, name: "Menu", screen: "CuisineMenu", icon: BowlFoodIcon },
+    { id: 3, name: "Menu", screen: "FoodMenu", icon: BowlFoodIcon },
     { id: 4, name: "Order", screen: "Order", icon: ShoppingCartIcon },
   ];
 
