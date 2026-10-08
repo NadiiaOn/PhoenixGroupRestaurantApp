@@ -13,6 +13,9 @@ import {
   NunitoSans_600SemiBold,
   NunitoSans_700Bold,
 } from "@expo-google-fonts/nunito-sans";
+
+import { CartProvider } from "./context/CartContext";
+import OrderScreen from "./screens/OrderScreen";
 import CategoryMenu from "./screens/CategoryMenu";
 import FoodMenu from "./screens/FoodMenu";
 
@@ -39,11 +42,12 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -64,9 +68,11 @@ export default function App() {
           })}
         />
         <Stack.Screen name="FoodMenu" component={FoodMenu} />
-        <Stack.Screen name="CuisineMenu" component={CuisineMenu} />
+        <Stack.Screen name="CuisineMenu" component={CuisineMenu} />  
         <Stack.Screen name="CategoryMenu" component={CategoryMenu} />
+        <Stack.Screen name="OrderScreen" component={OrderScreen} />
       </Stack.Navigator>
     </NavigationContainer>
+  </CartProvider>
   );
 }

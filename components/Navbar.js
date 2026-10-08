@@ -12,10 +12,13 @@ import NavItem from "./NavItem";
 import { useState } from "react";
 import Restaurant from "../constants/restaurant";
 import { openMaps } from "../utils/openMaps";
+import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
   const [isOpening, setIsOpening] = useState(false);
   const navigation = useNavigation();
+  const { totalCount } = useCart();
+
   const navItems = [
     { id: 1, name: "Home", screen: "Home", icon: HouseIcon },
     {
@@ -23,8 +26,10 @@ export default function Navbar() {
       name: "Find Us",
       icon: MapPinIcon,
     },
-    { id: 3, name: "Menu", screen: "FoodMenu", icon: BowlFoodIcon },
-    { id: 4, name: "Order", screen: "Order", icon: ShoppingCartIcon },
+   { id: 3, name: "Menu", screen: "FoodMenu", icon: BowlFoodIcon },
+    { id: 4, name: "Order", screen: "OrderScreen", icon: ShoppingCartIcon },
+    
+
   ];
 
   function goTo(screen) {
@@ -55,6 +60,7 @@ export default function Navbar() {
         <NavItem
           key={item.id}
           item={item}
+          badge={item.name === "Order" && totalCount > 0 ? totalCount : null}
           onPress={() => {
             if (item.name === "Find Us") {
               handleMapPress();
