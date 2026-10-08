@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    paddingBottom: 110, // room for the floating navbar
+    paddingBottom: 110,
   },
   sectionTitle: {
     fontFamily: "Rubik-Bold",
