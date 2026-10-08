@@ -10,6 +10,7 @@ import { Image } from "expo-image";
 import { MinusIcon, PlusIcon, TrashIcon } from "phosphor-react-native";
 import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar";
+import Fonts from "../constants/Fonts";
 
 export default function OrderScreen({ navigation }) {
   const {
@@ -202,7 +203,7 @@ const styles = StyleSheet.create({
   },
   rowName: {
     flex: 1,
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 16,
     color: "#222",
     marginRight: 8,
@@ -211,7 +212,7 @@ const styles = StyleSheet.create({
     padding: 2,
   },
   rowUnitPrice: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 13,
     color: "#888",
   },
@@ -237,12 +238,12 @@ const styles = StyleSheet.create({
   stepperValue: {
     minWidth: 24,
     textAlign: "center",
-    fontFamily: "Rubik-Medium",
+    fontFamily: Fonts.headingMedium,
     fontSize: 15,
     color: "#222",
   },
   rowTotal: {
-    fontFamily: "Rubik-Medium",
+    fontFamily: Fonts.headingMedium,
     fontSize: 16,
     color: "#f45a45",
   },
@@ -258,12 +259,12 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   summaryLabel: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 15,
     color: "#555",
   },
   summaryValue: {
-    fontFamily: "NunitoSans-SemiBold",
+    fontFamily: Fonts.bodySemiBold,
     fontSize: 15,
     color: "#222",
   },
@@ -274,12 +275,12 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   totalLabel: {
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 18,
     color: "#222",
   },
   totalValue: {
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 18,
     color: "#f45a45",
   },
@@ -291,7 +292,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   primaryButtonText: {
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 16,
     color: "#fff",
   },
@@ -307,13 +308,13 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   emptyTitle: {
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 22,
     color: "#222",
     marginBottom: 8,
   },
   emptyText: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 15,
     color: "#777",
     textAlign: "center",

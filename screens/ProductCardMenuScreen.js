@@ -3,6 +3,7 @@ import { starters, meals, desserts, drinks } from "../data/Products";
 import { useCart } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
 import Navbar from "../components/Navbar";
+import Fonts from "../constants/Fonts";
 
 const allSections = [
   { title: "Starters", type: "starters", products: starters },
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
   },
 
   sectionTitle: {
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 22,
     color: "#222",
     marginHorizontal: 16,
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
   },
 
   emptyText: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 16,
     color: "#999",
   },
