@@ -1356,7 +1356,7 @@ export const drinks = [
       "Sodium benzoate",
       "Natural flavours",
     ],
-    image: require("../assets/drinks/pommac.jpg"),
+    image: require("../assets/drinks/pommac.png"),
     country: "Sweden",
     allergies: [],
     vegetarian: true,

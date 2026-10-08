@@ -76,7 +76,7 @@ export default function ProductDetailScreen({ route }) {
         <View style={styles.body}>
           <View style={styles.headerRow}>
             <Text style={styles.name}>{name}</Text>
-            <Text style={styles.price}>{price} $</Text>
+            <Text style={styles.price}>${price}</Text>
           </View>
 
           <View style={styles.tagRow}>
@@ -85,7 +85,9 @@ export default function ProductDetailScreen({ route }) {
             {vegetarian ? <Tag label="Vegetarian" variant="green" /> : null}
           </View>
 
-          {description ? <Text style={styles.description}>{description}</Text> : null}
+          {description ? (
+            <Text style={styles.description}>{description}</Text>
+          ) : null}
 
           <Section title="Ingredients">
             {ingredients.length > 0 ? (
@@ -141,7 +143,7 @@ export default function ProductDetailScreen({ route }) {
           ]}
         >
           <Text style={styles.addButtonText}>
-            {justAdded ? "Added to order" : `Add to order ${price * quantity} $`}
+            {justAdded ? "Added to order" : `Add to order $${price * quantity}`}
           </Text>
         </Pressable>
       </View>
@@ -163,7 +165,9 @@ function Section({ title, children }) {
 function Tag({ label, variant = "primary" }) {
   return (
     <View style={[styles.tag, styles[`tag_${variant}`]]}>
-      <Text style={[styles.tagText, styles[`tagText_${variant}`]]}>{label}</Text>
+      <Text style={[styles.tagText, styles[`tagText_${variant}`]]}>
+        {label}
+      </Text>
     </View>
   );
 }

@@ -21,7 +21,7 @@ export default function CuisineCard({ cuisine, onPress }) {
         </View>
         <Image
           source={cuisine?.image}
-          resizeMode="contain"
+          contentFit="contain"
           style={styles.image}
         />
       </View>

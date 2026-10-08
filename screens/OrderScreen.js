@@ -1,18 +1,30 @@
-import { FlatList, View, Text, Pressable, StyleSheet, Alert } from "react-native";
+import {
+  FlatList,
+  View,
+  Text,
+  Pressable,
+  StyleSheet,
+  Alert,
+} from "react-native";
 import { Image } from "expo-image";
 import { MinusIcon, PlusIcon, TrashIcon } from "phosphor-react-native";
 import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar";
 
 export default function OrderScreen({ navigation }) {
-  const { items, changeQuantity, removeItem, clearCart, totalCount, totalPrice } =
-    useCart();
+  const {
+    items,
+    changeQuantity,
+    removeItem,
+    clearCart,
+    totalCount,
+    totalPrice,
+  } = useCart();
 
   function handlePlaceOrder() {
-    Alert.alert(
-      "Order placed!",`Thank you!`,
-      [{ text: "OK", onPress: clearCart }]
-    );
+    Alert.alert("Order placed!", `Thank you!`, [
+      { text: "OK", onPress: clearCart },
+    ]);
   }
 
   if (items.length === 0) {
@@ -21,13 +33,16 @@ export default function OrderScreen({ navigation }) {
         <View style={styles.empty}>
           <Text style={styles.emptyTitle}>Your order is empty</Text>
           <Text style={styles.emptyText}>
-            Add something tasty to your order, we recommend the Swedish meatballs.
+            Add something tasty to your order, we recommend the Swedish
+            meatballs.
           </Text>
           <Pressable
-            onPress={() => navigation.navigate("CuisineMenu")}
-            style={({pressed}) => 
-                pressed ? [styles.primaryButton, styles.pressed] 
-                : styles.primaryButton }
+            onPress={() => navigation.navigate("FoodMenu")}
+            style={({ pressed }) =>
+              pressed
+                ? [styles.primaryButton, styles.pressed]
+                : styles.primaryButton
+            }
           >
             <Text style={styles.primaryButtonText}>Browse the menu</Text>
           </Pressable>
@@ -60,16 +75,20 @@ export default function OrderScreen({ navigation }) {
             </View>
             <View style={[styles.summaryRow, styles.totalRow]}>
               <Text style={styles.totalLabel}>Total</Text>
-              <Text style={styles.totalValue}>{totalPrice} </Text>
+              <Text style={styles.totalValue}>${totalPrice} </Text>
             </View>
 
             <Pressable
               onPress={handlePlaceOrder}
-              style={({pressed}) => 
-                pressed ? [styles.primaryButton, styles.pressed] 
-                : styles.primaryButton }
+              style={({ pressed }) =>
+                pressed
+                  ? [styles.primaryButton, styles.pressed]
+                  : styles.primaryButton
+              }
             >
-              <Text style={styles.primaryButtonText}>Place order · {totalPrice} $</Text>
+              <Text style={styles.primaryButtonText}>
+                Place order · ${totalPrice}
+              </Text>
             </Pressable>
           </View>
         }
@@ -103,25 +122,37 @@ function OrderRow({ item, onIncrease, onDecrease, onRemove }) {
           <Text style={styles.rowName} numberOfLines={1}>
             {product.name}
           </Text>
-          <Pressable onPress={onRemove} hitSlop={10} style={styles.removeButton}>
+          <Pressable
+            onPress={onRemove}
+            hitSlop={10}
+            style={styles.removeButton}
+          >
             <TrashIcon size={18} color="#999" />
           </Pressable>
         </View>
 
-        <Text style={styles.rowUnitPrice}>{product.price} $ each</Text>
+        <Text style={styles.rowUnitPrice}>${product.price} each</Text>
 
         <View style={styles.rowFooter}>
           <View style={styles.stepper}>
-            <Pressable onPress={onDecrease} hitSlop={8} style={styles.stepperButton}>
+            <Pressable
+              onPress={onDecrease}
+              hitSlop={8}
+              style={styles.stepperButton}
+            >
               <MinusIcon size={16} color="#222" weight="bold" />
             </Pressable>
             <Text style={styles.stepperValue}>{quantity}</Text>
-            <Pressable onPress={onIncrease} hitSlop={8} style={styles.stepperButton}>
+            <Pressable
+              onPress={onIncrease}
+              hitSlop={8}
+              style={styles.stepperButton}
+            >
               <PlusIcon size={16} color="#222" weight="bold" />
             </Pressable>
           </View>
 
-          <Text style={styles.rowTotal}>{product.price * quantity} $</Text>
+          <Text style={styles.rowTotal}>${product.price * quantity}</Text>
         </View>
       </View>
     </View>

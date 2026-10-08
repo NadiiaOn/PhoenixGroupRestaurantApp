@@ -30,7 +30,7 @@ export default function CategoryMenu({ navigation }) {
       id: 4,
       title: "Drinks",
       description: "All our Drinks",
-      image: require("../assets/categoryCard/Cola-bg.png"),
+      image: require("../assets/drinks/coca-cola.png"),
       type: "drinks",
     },
   ];
@@ -117,7 +117,7 @@ export default function CategoryMenu({ navigation }) {
       id: 12,
       title: "Soda",
       description: "All our sodas and soft drinks",
-      image: require("../assets/categoryCard/Cola-bg.png"),
+      image: require("../assets/drinks/coca-cola.png"),
       path: "",
     },
     {
