@@ -5,6 +5,7 @@ import { MinusIcon, PlusIcon } from "phosphor-react-native";
 import { starters, meals, desserts, drinks } from "../data/Products";
 import { useCart } from "../context/CartContext";
 import Navbar from "../components/Navbar";
+import Fonts from "../constants/Fonts";
 
 const productLists = { starters, meals, desserts, drinks };
 
@@ -193,7 +194,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   placeholderText: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 14,
     color: "#999",
   },
@@ -208,18 +209,18 @@ const styles = StyleSheet.create({
   },
   name: {
     flex: 1,
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 24,
     color: "#222",
     marginRight: 12,
   },
   price: {
-    fontFamily: "Rubik-Medium",
+    fontFamily: Fonts.headingMedium,
     fontSize: 20,
     color: "#f45a45",
   },
   description: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 16,
     color: "#555",
     lineHeight: 24,
@@ -229,19 +230,19 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   sectionTitle: {
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 18,
     color: "#222",
     marginBottom: 8,
   },
   listItem: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 15,
     color: "#444",
     lineHeight: 24,
   },
   emptyText: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 15,
     color: "#999",
   },
@@ -268,7 +269,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff1d6",
   },
   tagText: {
-    fontFamily: "NunitoSans-Bold",
+    fontFamily: Fonts.bodyBold,
     fontSize: 12,
   },
   tagText_primary: {
@@ -316,7 +317,7 @@ const styles = StyleSheet.create({
   stepperValue: {
     minWidth: 24,
     textAlign: "center",
-    fontFamily: "Rubik-Medium",
+    fontFamily: Fonts.headingMedium,
     fontSize: 16,
     color: "#222",
   },
@@ -332,7 +333,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#2e7d32",
   },
   addButtonText: {
-    fontFamily: "Rubik-Bold",
+    fontFamily: Fonts.heading,
     fontSize: 15,
     color: "#fff",
   },
@@ -345,7 +346,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   notFoundText: {
-    fontFamily: "NunitoSans-Regular",
+    fontFamily: Fonts.body,
     fontSize: 16,
     color: "#999",
   },

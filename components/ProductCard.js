@@ -1,6 +1,7 @@
 import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
 import { Image } from "expo-image";
 import { PlusIcon } from "phosphor-react-native";
+import Fonts from "../constants/Fonts";
 
 export default function ProductCard({ meal, onPress, onAddToCart }) {
   const { name, price, category, description, image, country } = meal;
@@ -44,13 +45,16 @@ export default function ProductCard({ meal, onPress, onAddToCart }) {
           {country ? <Tag label={country} variant="secondary" /> : null}
         </View>
 
-          {onAddToCart ? (
+        {onAddToCart ? (
           <Pressable
             onPress={() => onAddToCart(meal)}
             hitSlop={8}
-            style={({ pressed }) => [styles.addButton, pressed && styles.addButtonPressed]}
+            style={({ pressed }) => [
+              styles.addButton,
+              pressed && styles.addButtonPressed,
+            ]}
           >
-          <PlusIcon size={18} color="#fff" weight="bold" />
+            <PlusIcon size={18} color="#fff" weight="bold" />
           </Pressable>
         ) : null}
       </View>
@@ -102,6 +106,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   placeholderIcon: {
+    fontFamily: Fonts.body,
     fontSize: 40,
   },
   info: {
@@ -115,17 +120,18 @@ const styles = StyleSheet.create({
   },
   name: {
     flex: 1,
+    fontFamily: Fonts.heading,
     fontSize: 18,
-    fontWeight: "bold",
     color: "#222",
     marginRight: 8,
   },
   price: {
+    fontFamily: Fonts.headingMedium,
     fontSize: 16,
-    fontWeight: "600",
     color: "#f45a45",
   },
   description: {
+    fontFamily: Fonts.body,
     fontSize: 14,
     color: "#555",
     lineHeight: 20,
@@ -135,6 +141,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 6,
+    paddingRight: 44,
   },
   tag: {
     backgroundColor: "#f45a45",
@@ -146,26 +153,26 @@ const styles = StyleSheet.create({
     backgroundColor: "#f1e4d8",
   },
   tagText: {
+    fontFamily: Fonts.bodyBold,
     color: "#fff",
     fontSize: 12,
-    fontWeight: "600",
   },
   tagTextSecondary: {
     color: "#222",
   },
   addButton: {
- position: "absolute",
-  right: 12,
-  bottom: 12,
-  width: 32,
-  height: 32,
-  borderRadius: 16,
-  backgroundColor: "#f45a45",
-  alignItems: "center",
-  justifyContent: "center",
-},
-addButtonPressed: {
-  transform: [{ scale: 0.9 }],
-  opacity: 0.8,
-},
+    position: "absolute",
+    right: 12,
+    bottom: 12,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: "#f45a45",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  addButtonPressed: {
+    transform: [{ scale: 0.9 }],
+    opacity: 0.8,
+  },
 });
