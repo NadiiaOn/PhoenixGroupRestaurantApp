@@ -1,7 +1,8 @@
 import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
 import { Image } from "expo-image";
+import { PlusIcon } from "phosphor-react-native";
 
-export default function ProductCard({ meal, onPress }) {
+export default function ProductCard({ meal, onPress, onAddToCart }) {
   const { name, price, category, description, image, country } = meal;
 
   // För att det ska fungera både med bild sparade i t.ex /assets men också en direkt länk till en bild på internet
@@ -17,7 +18,7 @@ export default function ProductCard({ meal, onPress }) {
       ]}
     >
       {imageSource ? (
-        <Image source={imageSource} style={styles.image} resizeMode="cover" />
+        <Image source={imageSource} style={styles.image} contentFit="cover" />
       ) : (
         <View style={[styles.image, styles.imagePlaceholder]}>
           <Text style={styles.placeholderIcon}>IMAGE NOT FOUND</Text>
@@ -42,6 +43,16 @@ export default function ProductCard({ meal, onPress }) {
           {category ? <Tag label={category} /> : null}
           {country ? <Tag label={country} variant="secondary" /> : null}
         </View>
+
+          {onAddToCart ? (
+          <Pressable
+            onPress={() => onAddToCart(meal)}
+            hitSlop={8}
+            style={({ pressed }) => [styles.addButton, pressed && styles.addButtonPressed]}
+          >
+          <PlusIcon size={18} color="#fff" weight="bold" />
+          </Pressable>
+        ) : null}
       </View>
     </Pressable>
   );
@@ -142,4 +153,19 @@ const styles = StyleSheet.create({
   tagTextSecondary: {
     color: "#222",
   },
+  addButton: {
+ position: "absolute",
+  right: 12,
+  bottom: 12,
+  width: 32,
+  height: 32,
+  borderRadius: 16,
+  backgroundColor: "#f45a45",
+  alignItems: "center",
+  justifyContent: "center",
+},
+addButtonPressed: {
+  transform: [{ scale: 0.9 }],
+  opacity: 0.8,
+},
 });
