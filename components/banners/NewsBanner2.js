@@ -25,10 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     backgroundColor: "#fff",
     elevation: 4,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.12,
-    shadowRadius: 5,
+    boxShadow: "0 1px 10px rgba(0, 0, 0, 0.1)",
   },
 
   imageContainer: {
