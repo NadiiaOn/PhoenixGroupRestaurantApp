@@ -1,5 +1,6 @@
 import { SectionList, View, Text, StyleSheet } from "react-native";
 import { starters, meals, desserts, drinks } from "../data/Products";
+import { useCart } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
 import Navbar from "../components/Navbar";
 
@@ -12,6 +13,7 @@ const allSections = [
 
 export default function ProductCardMenuScreen({ route, navigation }) {
   const { country } = route.params;
+  const { addItem } = useCart();
 
   const sections = allSections
     .map((section) => ({
@@ -39,6 +41,7 @@ export default function ProductCardMenuScreen({ route, navigation }) {
           <ProductCard
             meal={item}
             onPress={(product) => handlePress(product, section.type)}
+            onAddToCart={(product) => addItem(product, section.type)}
           />
         )}
         stickySectionHeadersEnabled={false}
@@ -55,12 +58,15 @@ export default function ProductCardMenuScreen({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
     backgroundColor: "#fff",
   },
+  list: {
+    flex: 1,
+  },
   content: {
-    paddingBottom: 24,
+    paddingBottom: 110, // room for the floating navbar
   },
   sectionTitle: {
     fontFamily: "Rubik-Bold",
