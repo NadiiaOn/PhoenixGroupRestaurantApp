@@ -11,7 +11,7 @@ export default function CuisineMenu({ navigation }) {
       description: "Classic meals from Italy",
       image: require("../assets/cusineCard/italianfood.png"),
       flag: require("../assets/flags/italy.png"),
-      background: "rgba(60, 152, 92, 0.1)",
+      background: "rgba(60, 152, 92, 0.05)",
       country: "Italy",
     },
     {
@@ -20,7 +20,7 @@ export default function CuisineMenu({ navigation }) {
       description: "Traditional flavors from Sweden",
       image: require("../assets/cusineCard/swedishfood.png"),
       flag: require("../assets/flags/sweden.png"),
-      background: "rgba(55, 64, 150, 0.1)",
+      background: "rgba(55, 64, 150, 0.05)",
       country: "Sweden",
     },
     {
@@ -29,7 +29,7 @@ export default function CuisineMenu({ navigation }) {
       description: "Spicy flavors from Indonesia",
       image: require("../assets/cusineCard/indonesianfood.png"),
       flag: require("../assets/flags/indonesia.png"),
-      background: "rgba(151, 77, 77, 0.15)",
+      background: "rgba(151, 77, 77, 0.05)",
       country: "Indonesia",
     },
 
@@ -39,7 +39,7 @@ export default function CuisineMenu({ navigation }) {
       description: "Traditional meals from Ukraine",
       image: require("../assets/cusineCard/ukrainefood.png"),
       flag: require("../assets/flags/ukraine.png"),
-      background: "rgba(71, 79, 151, 0.15)",
+      background: "rgba(71, 79, 151, 0.05)",
       country: "Ukraine",
     },
   ];
