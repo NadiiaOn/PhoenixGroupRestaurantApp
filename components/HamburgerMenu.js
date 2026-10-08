@@ -6,10 +6,10 @@ import {
   Text,
   View,
 } from "react-native";
-import { ListIcon, XIcon } from "phosphor-react-native";
+import { ListIcon } from "phosphor-react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import Animated, { FadeInUp, FadeInLeft } from "react-native-reanimated";
+import Animated, { FadeInLeft } from "react-native-reanimated";
 import {
   UserPlusIcon,
   PhoneCallIcon,
@@ -24,6 +24,7 @@ import MenuItem from "./MenuItem";
 import Logo from "./Logo";
 import MenuFooter from "./MenuFooter";
 import { OpeningHours } from "../data/OpeningHours";
+import Fonts from "../constants/Fonts";
 
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);
@@ -179,5 +180,6 @@ const styles = StyleSheet.create({
   },
   footerText: {
     color: "white",
+    fontFamily: Fonts.bodySemiBold,
   },
 });

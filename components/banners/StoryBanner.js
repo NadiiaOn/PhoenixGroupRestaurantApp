@@ -2,6 +2,7 @@ import { StyleSheet, View, Text, Pressable } from "react-native";
 import Logo from "../Logo";
 import { useState } from "react";
 import History from "../History";
+import Fonts from "../../constants/Fonts";
 
 export default function StoryBanner({ banner }) {
   const [historyVisible, setHistoryVisible] = useState(false);
@@ -65,11 +66,12 @@ const styles = StyleSheet.create({
   },
 
   name: {
-    fontSize: 26,
-    fontWeight: "700",
+    fontSize: 24,
+
     color: "#f45a45",
     flexShrink: 1,
     textTransform: "uppercase",
+    fontFamily: Fonts.bodyBold,
   },
 
   description: {
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: "#555",
     flexShrink: 1,
+    fontFamily: Fonts.body,
   },
 
   infoContainer: {
@@ -89,6 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "600",
     color: "#777",
+    fontFamily: Fonts.body,
   },
 
   label: {

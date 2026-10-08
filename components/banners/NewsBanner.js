@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { Image } from "expo-image";
+import Fonts from "../../constants/Fonts";
 
 export default function NewsBanner({ banner, onPress }) {
   return (
@@ -60,17 +61,18 @@ const styles = StyleSheet.create({
 
   label: {
     fontSize: 26,
-    fontWeight: "800",
     color: "#ffffff",
     textTransform: "uppercase",
+    fontFamily: Fonts.bodyBold,
   },
 
   name: {
-    fontSize: 26,
+    fontSize: 24,
     fontWeight: "600",
     color: "#fff",
     flexShrink: 1,
     textTransform: "uppercase",
+    fontFamily: Fonts.bodyBold,
   },
 
   description: {
@@ -79,6 +81,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     color: "#fff",
     flexShrink: 1,
+    fontFamily: Fonts.body,
   },
 
   discount: {

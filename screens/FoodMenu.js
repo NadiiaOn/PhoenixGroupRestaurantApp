@@ -17,6 +17,7 @@ export default function FoodMenu({ navigation }) {
   );
 }
 
+// Glöm inte att använda fonts för text!
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -7,6 +7,7 @@ import {
   TextInput,
   useWindowDimensions,
 } from "react-native";
+import Fonts from "../constants/Fonts";
 export default function Contact() {
   const { height } = useWindowDimensions();
 
@@ -90,15 +91,16 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 28,
-    fontWeight: "700",
     color: "#fff",
+    fontFamily: Fonts.bodyBold,
   },
 
   description: {
-    fontSize: 14,
+    fontSize: 17,
     lineHeight: 21,
     color: "#fff",
     opacity: 0.9,
+    fontFamily: Fonts.body,
   },
 
   form: {
@@ -110,11 +112,11 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    fontSize: 13,
-    fontWeight: "700",
+    fontSize: 16,
     color: "#fff",
     textTransform: "uppercase",
     letterSpacing: 0.5,
+    fontFamily: Fonts.bodyBold,
   },
 
   input: {
@@ -145,8 +147,8 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontSize: 15,
-    fontWeight: "700",
+    fontSize: 18,
     color: "#fff",
+    fontFamily: Fonts.bodyBold,
   },
 });

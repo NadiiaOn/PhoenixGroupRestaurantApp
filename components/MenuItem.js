@@ -1,4 +1,5 @@
 import { Linking, Pressable, StyleSheet, Text, View } from "react-native";
+import Fonts from "../constants/Fonts";
 
 export default function MenuItem({ links, onPress, isOpen }) {
   const Icon = links.icon;
@@ -49,15 +50,16 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   text: {
-    fontSize: 14,
-    fontWeight: "500",
+    fontSize: 16,
     color: "white",
+    fontFamily: Fonts.bodySemiBold,
   },
   textInfo: {
     marginTop: 8,
     color: "white",
     marginTop: 12,
     marginLeft: 30,
+    fontFamily: Fonts.body,
   },
   dayText: {
     width: 80,
