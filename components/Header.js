@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import Logo from "./Logo";
 import { useNavigation } from "@react-navigation/native";
 

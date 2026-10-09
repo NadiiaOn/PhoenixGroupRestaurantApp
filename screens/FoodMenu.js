@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, Pressable, Image } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 import Navbar from "../components/Navbar";
 import Fonts from "../constants/Fonts";
 import { FlagIcon, BowlFoodIcon } from "phosphor-react-native";
