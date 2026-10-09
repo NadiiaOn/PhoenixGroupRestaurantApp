@@ -36,6 +36,7 @@ export default function Contact() {
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Name</Text>
           <TextInput
+            accessibilityLabel="Contact us: Name input field: Write your name"
             style={styles.input}
             value={name}
             onChangeText={setName}
@@ -46,6 +47,7 @@ export default function Contact() {
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <TextInput
+            accessibilityLabel="Contact us: Email input field: Write your email"
             style={styles.input}
             value={email}
             onChangeText={setEmail}
@@ -58,6 +60,7 @@ export default function Contact() {
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Message</Text>
           <TextInput
+            accessibilityLabel="Contact us: Message input field: Write your message"
             style={[styles.input, styles.messageInput]}
             value={message}
             onChangeText={setMessage}
@@ -67,7 +70,13 @@ export default function Contact() {
             textAlignVertical="top"
           />
         </View>
-        <Pressable style={styles.button} onPress={resetContactFields}>
+        <Pressable
+          style={styles.button}
+          onPress={resetContactFields}
+          accessibilityRole="button"
+          accessibilityLabel="Contact us: Send message"
+          accessibilityHint="Sends a message with the information previously written in the fields"
+        >
           <Text style={styles.buttonText}>Send Message</Text>
         </Pressable>
       </View>

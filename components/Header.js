@@ -13,7 +13,10 @@ export default function Header() {
           style={({ pressed }) => pressed && { opacity: 0.5 }}
           onPress={() => navigation.navigate("Home")}
         >
-          <Logo size={135} />
+          <Logo
+            size={135}
+            accessibilityLabel="Logo that reads: 4NC - four nations cuisine, Online Food"
+          />
         </Pressable>
 
         <View style={styles.menu}>

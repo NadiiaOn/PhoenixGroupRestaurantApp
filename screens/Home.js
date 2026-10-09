@@ -1,4 +1,4 @@
-import { Button, FlatList, StyleSheet, View, Text} from "react-native";
+import { Button, FlatList, StyleSheet, View, Text } from "react-native";
 import { useEffect, useState } from "react";
 import { Banners } from "../data/BannerData";
 
@@ -41,7 +41,7 @@ export default function Home({ navigation }) {
             return <NewsBanner banner={item} onPress={handleBannerPress} />;
           }
           if (index === 1) {
-            return <NewsBanner2 banner={item} onPress={handleBannerPress}/>;
+            return <NewsBanner2 banner={item} onPress={handleBannerPress} />;
           }
           if (index === 2) {
             return <StoryBanner banner={item} />;
@@ -59,6 +59,7 @@ export default function Home({ navigation }) {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

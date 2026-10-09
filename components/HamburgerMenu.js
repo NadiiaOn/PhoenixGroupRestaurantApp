@@ -73,6 +73,7 @@ export default function HamburgerMenu() {
   return (
     <>
       <Pressable
+        accessibilityLabel="Opens information menu"
         style={({ pressed }) => pressed && { opacity: 0.5 }}
         onPress={() => setOpen(true)}
       >

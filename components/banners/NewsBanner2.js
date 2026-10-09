@@ -4,7 +4,11 @@ import Fonts from "../../constants/Fonts";
 
 export default function NewsBanner2({ banner, onPress }) {
   return (
-    <Pressable style={styles.container} onPress={() => onPress?.(banner)}>
+    <Pressable
+      accessibilityLabel="News banner: New food type, indonesian food. Press to see food types."
+      style={styles.container}
+      onPress={() => onPress?.(banner)}
+    >
       <View style={styles.content}>
         <Text style={styles.name}>{banner.name}</Text>
         <Text style={styles.description}>{banner.description}</Text>

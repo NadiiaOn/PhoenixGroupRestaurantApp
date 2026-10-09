@@ -10,6 +10,7 @@ export default function StoryBanner({ banner }) {
   return (
     <>
       <Pressable
+        accessibilityLabel="History banner: Our history, press to read how we came to be."
         style={styles.container}
         onPress={() => setHistoryVisible(true)}
       >

@@ -5,7 +5,11 @@ import Fonts from "../../constants/Fonts";
 export default function NewsBanner({ banner, onPress }) {
   return (
     <View>
-      <Pressable style={styles.container} onPress={() => onPress?.(banner)}>
+      <Pressable
+        accessibilityLabel="News banner: Arancini, press to see product"
+        style={styles.container}
+        onPress={() => onPress?.(banner)}
+      >
         <View style={styles.imageContainer}>
           <Image source={banner.image} style={styles.image} />
         </View>
